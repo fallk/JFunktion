@@ -1,3 +1,7 @@
+// THIS CODE IS MACHINE-GENERATED, DO NOT EDIT!
+
+package club.bonerbrew.jfunktion;
+
 /**
  * Represents a function that accepts two arguments, a $primitive$ and a generic, and produces a
  * $primitive2$ result.  This is the {@code $primitive$}-consuming-to-{@code $primitive2$} primitive specialization for
