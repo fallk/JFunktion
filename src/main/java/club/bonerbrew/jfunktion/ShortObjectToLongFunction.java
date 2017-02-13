@@ -1,3 +1,7 @@
+// THIS CODE IS MACHINE-GENERATED, DO NOT EDIT!
+
+package club.bonerbrew.jfunktion;
+
 /**
  * Represents a function that accepts two arguments, a short and a generic, and produces a
  * long result.  This is the {@code short}-consuming-to-{@code long} primitive specialization for

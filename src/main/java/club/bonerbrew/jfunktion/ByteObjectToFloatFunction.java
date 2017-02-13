@@ -1,3 +1,7 @@
+// THIS CODE IS MACHINE-GENERATED, DO NOT EDIT!
+
+package club.bonerbrew.jfunktion;
+
 /**
  * Represents a function that accepts two arguments, a byte and a generic, and produces a
  * float result.  This is the {@code byte}-consuming-to-{@code float} primitive specialization for

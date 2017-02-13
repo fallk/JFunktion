@@ -1,3 +1,7 @@
+// THIS CODE IS MACHINE-GENERATED, DO NOT EDIT!
+
+package club.bonerbrew.jfunktion;
+
 /**
  * Represents a function that accepts two arguments, a char and a generic, and produces a
  * boolean result.  This is the {@code char}-consuming-to-{@code boolean} primitive specialization for

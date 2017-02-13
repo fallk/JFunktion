@@ -1,3 +1,7 @@
+// THIS CODE IS MACHINE-GENERATED, DO NOT EDIT!
+
+package club.bonerbrew.jfunktion;
+
 /**
  * Represents a function that accepts two arguments, a int and a generic, and produces a
  * double result.  This is the {@code int}-consuming-to-{@code double} primitive specialization for
