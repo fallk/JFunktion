@@ -25,6 +25,33 @@ function findPrimitives(str) {
   return prim;
 }
 
+// BEGIN COOL THING
+
+function callManyTimes(maxIndices, func) {
+    doCallManyTimes(maxIndices, func, [], 0);
+}
+
+function doCallManyTimes(maxIndices, func, args, index) {
+    if (maxIndices.length === 0) {
+        func(args);
+    } else {
+        var rest = maxIndices.slice(1);
+        for (args[index] = 0; args[index] < maxIndices[0]; ++args[index]) {
+            doCallManyTimes(rest, func, args, index + 1);
+        }
+    }
+}
+
+// END COOL THING
+
+function fillArray(value, len) {
+  var arr = [];
+  for (var i = 0; i < len; i++) {
+    arr.push(value);
+  }
+  return arr;
+}
+
 const files = fs.readdirSync('./generators/');
 
 for (const file of files) {
@@ -34,56 +61,19 @@ for (const file of files) {
 
   const len = primitives.length;
 
-  if (numPrimitives == 1) {
-
-    for (let i = 0; i < len; i++) {
-      let s = str.replace(/\$primitive\$/g, primitives[i])
-                 .replace(/\$primitiveFmt\$/g, capPrimitives[i]);
-
-      let f = file.replace(/\$primitive\$/g, primitives[i])
-                  .replace(/\$primitiveFmt\$/g, capPrimitives[i]);
-
-      fs.writeFileSync('./src/main/java/club/bonerbrew/jfunktion/' + f, s);
+  callManyTimes(fillArray(len, numPrimitives), possibles => {//jshint ignore:line
+    let s = str;
+    let f = file;
+    for (let i = 0; i < possibles.length; i++) {
+      let re = new RegExp("\\$primitive" + (i+1===1?'':(i+1)) + "\\$", 'g');
+      let re2 = new RegExp("\\$primitiveFmt" + (i+1===1?'':(i+1)) + "\\$", 'g');
+      //console.log('re', re, re2);
+      s = s.replace(re, primitives[possibles[i]]);
+      s = s.replace(re2, capPrimitives[possibles[i]]);
+      f = f.replace(re, primitives[possibles[i]]);
+      f = f.replace(re2, capPrimitives[possibles[i]]);
     }
+    fs.writeFileSync('./src/main/java/club/bonerbrew/jfunktion/' + f, s);
+  });
 
-  } else if (numPrimitives == 2) {
-
-    for (let i = 0; i < len; i++)
-    for (let j = 0; j < len; j++) {
-      let s = str.replace(/\$primitive\$/g, primitives[i])
-                 .replace(/\$primitiveFmt\$/g, capPrimitives[i])
-                 .replace(/\$primitive2\$/g, primitives[j])
-                 .replace(/\$primitiveFmt2\$/g, capPrimitives[j]);
-
-      let f = file.replace(/\$primitive\$/g, primitives[i])
-                  .replace(/\$primitiveFmt\$/g, capPrimitives[i])
-                  .replace(/\$primitive2\$/g, primitives[j])
-                  .replace(/\$primitiveFmt2\$/g, capPrimitives[j]);
-
-      fs.writeFileSync('./src/main/java/club/bonerbrew/jfunktion/' + f, s);
-    }
-
-  } else if (numPrimitives == 3) {
-
-    for (let i = 0; i < len; i++)
-    for (let j = 0; j < len; j++)
-    for (let k = 0; k < len; k++) {
-      let s = str.replace(/\$primitive\$/g, primitives[i])
-                 .replace(/\$primitiveFmt\$/g, capPrimitives[i])
-                 .replace(/\$primitive2\$/g, primitives[j])
-                 .replace(/\$primitiveFmt2\$/g, capPrimitives[j])
-                 .replace(/\$primitive3\$/g, primitives[k])
-                 .replace(/\$primitiveFmt3\$/g, capPrimitives[k]);
-
-      let f = file.replace(/\$primitive\$/g, primitives[i])
-                  .replace(/\$primitiveFmt\$/g, capPrimitives[i])
-                  .replace(/\$primitive2\$/g, primitives[j])
-                  .replace(/\$primitiveFmt2\$/g, capPrimitives[j])
-                  .replace(/\$primitive3\$/g, primitives[k])
-                  .replace(/\$primitiveFmt3\$/g, capPrimitives[k]);
-
-      fs.writeFileSync('./src/main/java/club/bonerbrew/jfunktion/' + f, s);
-    }
-
-  }
 }
