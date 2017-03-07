@@ -17,7 +17,17 @@ package club.bonerbrew.tuples.values;
  * A ${i}-nth value.
  */
 public interface IValue${i}<V> {
+    /**
+     * Gets the value at index ${i}.
+     * @return the value at index ${i}.
+     */
     public V getValue${i}();
+
+    /**
+     * Gets the value at index ${i}.
+     * @return the value at index ${i}.
+     */
+    public V get${i}();
 }
   `;
   fs.writeFileSync(`src/main/java/club/bonerbrew/tuples/values/IValue${i}.java`, it2);
@@ -61,6 +71,8 @@ const it = `
 package club.bonerbrew.tuples;
 
 import java.util.Iterator;
+import java.util.Arrays;
+import java.util.stream.Stream;
 
 ${pair(0, nGenerics, i => 'import club.bonerbrew.tuples.values.IValue' + i + ';')}
 
@@ -75,8 +87,17 @@ public final class Tuple${nGenerics}<${ generics }>
 
     ${pair(0, nGenerics, i => '    private final ' + agenerics[i] + ' val' + i + ';')}
 
-    
+    /**
+     * Creates a tuple with ${nGenerics} elements. Pretty straightforward, isn't it?
+     */
     public static <${ generics }> Tuple${nGenerics}<${ generics }> with(${pair(0, nGenerics, genargs).trimLastComma()}) {
+        return new Tuple${nGenerics}<${ generics }>(${pair(0, nGenerics, i => 'value' + i + ',').trimLastComma()});
+    }
+
+    /**
+     * Creates a tuple with ${nGenerics} elements. Pretty straightforward, isn't it?
+     */
+    public static <${ generics }> Tuple${nGenerics}<${ generics }> of(${pair(0, nGenerics, genargs).trimLastComma()}) {
         return new Tuple${nGenerics}<${ generics }>(${pair(0, nGenerics, i => 'value' + i + ',').trimLastComma()});
     }
 
@@ -136,10 +157,61 @@ public final class Tuple${nGenerics}<${ generics }>
     }
 
     ${pair(0, nGenerics, i => `
+    /**
+     * Gets the value at index ${i}.
+     * @return the value at index ${i}.
+     */
+    @Override
     public ${agenerics[i]} getValue${i}() {
         return this.val${i};
     }
+
+    /**
+     * Gets the value at index ${i}.
+     * @return the value at index ${i}.
+     */
+    @Override
+    public ${agenerics[i]} get${i}() {
+        return this.val${i};
+    }
     `)}
+
+    /**
+     * @return the first / leftmost element in this tuple.
+     */
+    @Override
+    public ${agenerics[0]} getLeft() {
+        return this.val0;
+    }
+
+    /**
+     * @return the last / rightmost element in this tuple.
+     */
+    @Override
+    public ${agenerics[nGenerics-1]} getRight() {
+        return this.val${nGenerics-1};
+    }
+
+    /**
+     * @return a stream containing each element in this tuple in its current state.
+     */
+    public Stream<Object> stream() {
+        return Arrays.stream(new Object[] { ${pair(0, nGenerics, i => 'val' + i + ',').trimLastComma()} });
+    }
+
+    /**
+     * @return an array representation of this tuple.
+     */
+    public Object[] toArray() {
+        return new Object[] { ${pair(0, nGenerics, i => 'val' + i + ',').trimLastComma()} };
+    }
+    
+    /**
+     * @return an array representation of this tuple.
+     */
+    public String toString() {
+        return "Tuple${nGenerics} [" + Arrays.toString(new Object[] { ${pair(0, nGenerics, i => 'val' + i + ',').trimLastComma()} }) + "]";
+    }
 
     @Override
     public int getSize() {
@@ -150,7 +222,7 @@ public final class Tuple${nGenerics}<${ generics }>
 `;
 fs.writeFileSync(`src/main/java/club/bonerbrew/tuples/Tuple${nGenerics}.java`, 
   beautify(it, {indent_size: 4, space_before_conditional: false, max_preserve_newlines: 2, wrap_line_length: 150})
-  .replace(/<\s*((\w+),?\s*)+\s*>/g, x => x.replace(/\s*/g, '')).replace(/ L/g, 'L')
+  .replace(/<\s*((\w+),?\s*)+\s*>/g, x => x.replace(/\s*/g, '')).replace(/ L/g, 'L').replace(/^        /g, '    ')
 );
 
 

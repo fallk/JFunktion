@@ -1,6 +1,8 @@
 package club.bonerbrew.tuples;
 
 import java.util.Iterator;
+import java.util.Arrays;
+import java.util.stream.Stream;
 
 import club.bonerbrew.tuples.values.IValue0;
 import club.bonerbrew.tuples.values.IValue1;
@@ -171,7 +173,121 @@ public final class Tuple53 <K1,K2,K3,K4,K5,K6,K7,K8,K9,K10,K11,K12,K13,K14,K15,K
         private final K52 val51;
         private final K53 val52;
 
+        /**
+         * Creates a tuple with 53 elements. Pretty straightforward, isn't it?
+         */
         public static <K1,K2,K3,K4,K5,K6,K7,K8,K9,K10,K11,K12,K13,K14,K15,K16,K17,K18,K19,K20,K21,K22,K23,K24,K25,K26,K27,K28,K29,K30,K31,K32,K33,K34,K35,K36,K37,K38,K39,K40,K41,K42,K43,K44,K45,K46,K47,K48,K49,K50,K51,K52,K53> Tuple53 <K1,K2,K3,K4,K5,K6,K7,K8,K9,K10,K11,K12,K13,K14,K15,K16,K17,K18,K19,K20,K21,K22,K23,K24,K25,K26,K27,K28,K29,K30,K31,K32,K33,K34,K35,K36,K37,K38,K39,K40,K41,K42,K43,K44,K45,K46,K47,K48,K49,K50,K51,K52,K53> with(final K1 value0,
+            final K2 value1,
+            final K3 value2,
+            final K4 value3,
+            final K5 value4,
+            final K6 value5,
+            final K7 value6,
+            final K8 value7,
+            final K9 value8,
+            final K10 value9,
+            final K11 value10,
+            final K12 value11,
+            final K13 value12,
+            final K14 value13,
+            final K15 value14,
+            final K16 value15,
+            final K17 value16,
+            final K18 value17,
+            final K19 value18,
+            final K20 value19,
+            final K21 value20,
+            final K22 value21,
+            final K23 value22,
+            final K24 value23,
+            final K25 value24,
+            final K26 value25,
+            final K27 value26,
+            final K28 value27,
+            final K29 value28,
+            final K30 value29,
+            final K31 value30,
+            final K32 value31,
+            final K33 value32,
+            final K34 value33,
+            final K35 value34,
+            final K36 value35,
+            final K37 value36,
+            final K38 value37,
+            final K39 value38,
+            final K40 value39,
+            final K41 value40,
+            final K42 value41,
+            final K43 value42,
+            final K44 value43,
+            final K45 value44,
+            final K46 value45,
+            final K47 value46,
+            final K48 value47,
+            final K49 value48,
+            final K50 value49,
+            final K51 value50,
+            final K52 value51,
+            final K53 value52) {
+            return new Tuple53 <K1,K2,K3,K4,K5,K6,K7,K8,K9,K10,K11,K12,K13,K14,K15,K16,K17,K18,K19,K20,K21,K22,K23,K24,K25,K26,K27,K28,K29,K30,K31,K32,K33,K34,K35,K36,K37,K38,K39,K40,K41,K42,K43,K44,K45,K46,K47,K48,K49,K50,K51,K52,K53> (value0,
+                    value1,
+                    value2,
+                    value3,
+                    value4,
+                    value5,
+                    value6,
+                    value7,
+                    value8,
+                    value9,
+                    value10,
+                    value11,
+                    value12,
+                    value13,
+                    value14,
+                    value15,
+                    value16,
+                    value17,
+                    value18,
+                    value19,
+                    value20,
+                    value21,
+                    value22,
+                    value23,
+                    value24,
+                    value25,
+                    value26,
+                    value27,
+                    value28,
+                    value29,
+                    value30,
+                    value31,
+                    value32,
+                    value33,
+                    value34,
+                    value35,
+                    value36,
+                    value37,
+                    value38,
+                    value39,
+                    value40,
+                    value41,
+                    value42,
+                    value43,
+                    value44,
+                    value45,
+                    value46,
+                    value47,
+                    value48,
+                    value49,
+                    value50,
+                    value51,
+                    value52);
+        }
+
+        /**
+         * Creates a tuple with 53 elements. Pretty straightforward, isn't it?
+         */
+        public static <K1,K2,K3,K4,K5,K6,K7,K8,K9,K10,K11,K12,K13,K14,K15,K16,K17,K18,K19,K20,K21,K22,K23,K24,K25,K26,K27,K28,K29,K30,K31,K32,K33,K34,K35,K36,K37,K38,K39,K40,K41,K42,K43,K44,K45,K46,K47,K48,K49,K50,K51,K52,K53> Tuple53 <K1,K2,K3,K4,K5,K6,K7,K8,K9,K10,K11,K12,K13,K14,K15,K16,K17,K18,K19,K20,K21,K22,K23,K24,K25,K26,K27,K28,K29,K30,K31,K32,K33,K34,K35,K36,K37,K38,K39,K40,K41,K42,K43,K44,K45,K46,K47,K48,K49,K50,K51,K52,K53> of (final K1 value0,
             final K2 value1,
             final K3 value2,
             final K4 value3,
@@ -800,216 +916,1157 @@ public final class Tuple53 <K1,K2,K3,K4,K5,K6,K7,K8,K9,K10,K11,K12,K13,K14,K15,K
             this.val52 = value52;
         }
 
+        /**
+         * Gets the value at index 0.
+         * @return the value at index 0.
+         */
+        @Override
         public K1 getValue0() {
             return this.val0;
         }
 
+        /**
+         * Gets the value at index 0.
+         * @return the value at index 0.
+         */
+        @Override
+        public K1 get0() {
+            return this.val0;
+        }
+
+        /**
+         * Gets the value at index 1.
+         * @return the value at index 1.
+         */
+        @Override
         public K2 getValue1() {
             return this.val1;
         }
 
+        /**
+         * Gets the value at index 1.
+         * @return the value at index 1.
+         */
+        @Override
+        public K2 get1() {
+            return this.val1;
+        }
+
+        /**
+         * Gets the value at index 2.
+         * @return the value at index 2.
+         */
+        @Override
         public K3 getValue2() {
             return this.val2;
         }
 
+        /**
+         * Gets the value at index 2.
+         * @return the value at index 2.
+         */
+        @Override
+        public K3 get2() {
+            return this.val2;
+        }
+
+        /**
+         * Gets the value at index 3.
+         * @return the value at index 3.
+         */
+        @Override
         public K4 getValue3() {
             return this.val3;
         }
 
+        /**
+         * Gets the value at index 3.
+         * @return the value at index 3.
+         */
+        @Override
+        public K4 get3() {
+            return this.val3;
+        }
+
+        /**
+         * Gets the value at index 4.
+         * @return the value at index 4.
+         */
+        @Override
         public K5 getValue4() {
             return this.val4;
         }
 
+        /**
+         * Gets the value at index 4.
+         * @return the value at index 4.
+         */
+        @Override
+        public K5 get4() {
+            return this.val4;
+        }
+
+        /**
+         * Gets the value at index 5.
+         * @return the value at index 5.
+         */
+        @Override
         public K6 getValue5() {
             return this.val5;
         }
 
+        /**
+         * Gets the value at index 5.
+         * @return the value at index 5.
+         */
+        @Override
+        public K6 get5() {
+            return this.val5;
+        }
+
+        /**
+         * Gets the value at index 6.
+         * @return the value at index 6.
+         */
+        @Override
         public K7 getValue6() {
             return this.val6;
         }
 
+        /**
+         * Gets the value at index 6.
+         * @return the value at index 6.
+         */
+        @Override
+        public K7 get6() {
+            return this.val6;
+        }
+
+        /**
+         * Gets the value at index 7.
+         * @return the value at index 7.
+         */
+        @Override
         public K8 getValue7() {
             return this.val7;
         }
 
+        /**
+         * Gets the value at index 7.
+         * @return the value at index 7.
+         */
+        @Override
+        public K8 get7() {
+            return this.val7;
+        }
+
+        /**
+         * Gets the value at index 8.
+         * @return the value at index 8.
+         */
+        @Override
         public K9 getValue8() {
             return this.val8;
         }
 
+        /**
+         * Gets the value at index 8.
+         * @return the value at index 8.
+         */
+        @Override
+        public K9 get8() {
+            return this.val8;
+        }
+
+        /**
+         * Gets the value at index 9.
+         * @return the value at index 9.
+         */
+        @Override
         public K10 getValue9() {
             return this.val9;
         }
 
+        /**
+         * Gets the value at index 9.
+         * @return the value at index 9.
+         */
+        @Override
+        public K10 get9() {
+            return this.val9;
+        }
+
+        /**
+         * Gets the value at index 10.
+         * @return the value at index 10.
+         */
+        @Override
         public K11 getValue10() {
             return this.val10;
         }
 
+        /**
+         * Gets the value at index 10.
+         * @return the value at index 10.
+         */
+        @Override
+        public K11 get10() {
+            return this.val10;
+        }
+
+        /**
+         * Gets the value at index 11.
+         * @return the value at index 11.
+         */
+        @Override
         public K12 getValue11() {
             return this.val11;
         }
 
+        /**
+         * Gets the value at index 11.
+         * @return the value at index 11.
+         */
+        @Override
+        public K12 get11() {
+            return this.val11;
+        }
+
+        /**
+         * Gets the value at index 12.
+         * @return the value at index 12.
+         */
+        @Override
         public K13 getValue12() {
             return this.val12;
         }
 
+        /**
+         * Gets the value at index 12.
+         * @return the value at index 12.
+         */
+        @Override
+        public K13 get12() {
+            return this.val12;
+        }
+
+        /**
+         * Gets the value at index 13.
+         * @return the value at index 13.
+         */
+        @Override
         public K14 getValue13() {
             return this.val13;
         }
 
+        /**
+         * Gets the value at index 13.
+         * @return the value at index 13.
+         */
+        @Override
+        public K14 get13() {
+            return this.val13;
+        }
+
+        /**
+         * Gets the value at index 14.
+         * @return the value at index 14.
+         */
+        @Override
         public K15 getValue14() {
             return this.val14;
         }
 
+        /**
+         * Gets the value at index 14.
+         * @return the value at index 14.
+         */
+        @Override
+        public K15 get14() {
+            return this.val14;
+        }
+
+        /**
+         * Gets the value at index 15.
+         * @return the value at index 15.
+         */
+        @Override
         public K16 getValue15() {
             return this.val15;
         }
 
+        /**
+         * Gets the value at index 15.
+         * @return the value at index 15.
+         */
+        @Override
+        public K16 get15() {
+            return this.val15;
+        }
+
+        /**
+         * Gets the value at index 16.
+         * @return the value at index 16.
+         */
+        @Override
         public K17 getValue16() {
             return this.val16;
         }
 
+        /**
+         * Gets the value at index 16.
+         * @return the value at index 16.
+         */
+        @Override
+        public K17 get16() {
+            return this.val16;
+        }
+
+        /**
+         * Gets the value at index 17.
+         * @return the value at index 17.
+         */
+        @Override
         public K18 getValue17() {
             return this.val17;
         }
 
+        /**
+         * Gets the value at index 17.
+         * @return the value at index 17.
+         */
+        @Override
+        public K18 get17() {
+            return this.val17;
+        }
+
+        /**
+         * Gets the value at index 18.
+         * @return the value at index 18.
+         */
+        @Override
         public K19 getValue18() {
             return this.val18;
         }
 
+        /**
+         * Gets the value at index 18.
+         * @return the value at index 18.
+         */
+        @Override
+        public K19 get18() {
+            return this.val18;
+        }
+
+        /**
+         * Gets the value at index 19.
+         * @return the value at index 19.
+         */
+        @Override
         public K20 getValue19() {
             return this.val19;
         }
 
+        /**
+         * Gets the value at index 19.
+         * @return the value at index 19.
+         */
+        @Override
+        public K20 get19() {
+            return this.val19;
+        }
+
+        /**
+         * Gets the value at index 20.
+         * @return the value at index 20.
+         */
+        @Override
         public K21 getValue20() {
             return this.val20;
         }
 
+        /**
+         * Gets the value at index 20.
+         * @return the value at index 20.
+         */
+        @Override
+        public K21 get20() {
+            return this.val20;
+        }
+
+        /**
+         * Gets the value at index 21.
+         * @return the value at index 21.
+         */
+        @Override
         public K22 getValue21() {
             return this.val21;
         }
 
+        /**
+         * Gets the value at index 21.
+         * @return the value at index 21.
+         */
+        @Override
+        public K22 get21() {
+            return this.val21;
+        }
+
+        /**
+         * Gets the value at index 22.
+         * @return the value at index 22.
+         */
+        @Override
         public K23 getValue22() {
             return this.val22;
         }
 
+        /**
+         * Gets the value at index 22.
+         * @return the value at index 22.
+         */
+        @Override
+        public K23 get22() {
+            return this.val22;
+        }
+
+        /**
+         * Gets the value at index 23.
+         * @return the value at index 23.
+         */
+        @Override
         public K24 getValue23() {
             return this.val23;
         }
 
+        /**
+         * Gets the value at index 23.
+         * @return the value at index 23.
+         */
+        @Override
+        public K24 get23() {
+            return this.val23;
+        }
+
+        /**
+         * Gets the value at index 24.
+         * @return the value at index 24.
+         */
+        @Override
         public K25 getValue24() {
             return this.val24;
         }
 
+        /**
+         * Gets the value at index 24.
+         * @return the value at index 24.
+         */
+        @Override
+        public K25 get24() {
+            return this.val24;
+        }
+
+        /**
+         * Gets the value at index 25.
+         * @return the value at index 25.
+         */
+        @Override
         public K26 getValue25() {
             return this.val25;
         }
 
+        /**
+         * Gets the value at index 25.
+         * @return the value at index 25.
+         */
+        @Override
+        public K26 get25() {
+            return this.val25;
+        }
+
+        /**
+         * Gets the value at index 26.
+         * @return the value at index 26.
+         */
+        @Override
         public K27 getValue26() {
             return this.val26;
         }
 
+        /**
+         * Gets the value at index 26.
+         * @return the value at index 26.
+         */
+        @Override
+        public K27 get26() {
+            return this.val26;
+        }
+
+        /**
+         * Gets the value at index 27.
+         * @return the value at index 27.
+         */
+        @Override
         public K28 getValue27() {
             return this.val27;
         }
 
+        /**
+         * Gets the value at index 27.
+         * @return the value at index 27.
+         */
+        @Override
+        public K28 get27() {
+            return this.val27;
+        }
+
+        /**
+         * Gets the value at index 28.
+         * @return the value at index 28.
+         */
+        @Override
         public K29 getValue28() {
             return this.val28;
         }
 
+        /**
+         * Gets the value at index 28.
+         * @return the value at index 28.
+         */
+        @Override
+        public K29 get28() {
+            return this.val28;
+        }
+
+        /**
+         * Gets the value at index 29.
+         * @return the value at index 29.
+         */
+        @Override
         public K30 getValue29() {
             return this.val29;
         }
 
+        /**
+         * Gets the value at index 29.
+         * @return the value at index 29.
+         */
+        @Override
+        public K30 get29() {
+            return this.val29;
+        }
+
+        /**
+         * Gets the value at index 30.
+         * @return the value at index 30.
+         */
+        @Override
         public K31 getValue30() {
             return this.val30;
         }
 
+        /**
+         * Gets the value at index 30.
+         * @return the value at index 30.
+         */
+        @Override
+        public K31 get30() {
+            return this.val30;
+        }
+
+        /**
+         * Gets the value at index 31.
+         * @return the value at index 31.
+         */
+        @Override
         public K32 getValue31() {
             return this.val31;
         }
 
+        /**
+         * Gets the value at index 31.
+         * @return the value at index 31.
+         */
+        @Override
+        public K32 get31() {
+            return this.val31;
+        }
+
+        /**
+         * Gets the value at index 32.
+         * @return the value at index 32.
+         */
+        @Override
         public K33 getValue32() {
             return this.val32;
         }
 
+        /**
+         * Gets the value at index 32.
+         * @return the value at index 32.
+         */
+        @Override
+        public K33 get32() {
+            return this.val32;
+        }
+
+        /**
+         * Gets the value at index 33.
+         * @return the value at index 33.
+         */
+        @Override
         public K34 getValue33() {
             return this.val33;
         }
 
+        /**
+         * Gets the value at index 33.
+         * @return the value at index 33.
+         */
+        @Override
+        public K34 get33() {
+            return this.val33;
+        }
+
+        /**
+         * Gets the value at index 34.
+         * @return the value at index 34.
+         */
+        @Override
         public K35 getValue34() {
             return this.val34;
         }
 
+        /**
+         * Gets the value at index 34.
+         * @return the value at index 34.
+         */
+        @Override
+        public K35 get34() {
+            return this.val34;
+        }
+
+        /**
+         * Gets the value at index 35.
+         * @return the value at index 35.
+         */
+        @Override
         public K36 getValue35() {
             return this.val35;
         }
 
+        /**
+         * Gets the value at index 35.
+         * @return the value at index 35.
+         */
+        @Override
+        public K36 get35() {
+            return this.val35;
+        }
+
+        /**
+         * Gets the value at index 36.
+         * @return the value at index 36.
+         */
+        @Override
         public K37 getValue36() {
             return this.val36;
         }
 
+        /**
+         * Gets the value at index 36.
+         * @return the value at index 36.
+         */
+        @Override
+        public K37 get36() {
+            return this.val36;
+        }
+
+        /**
+         * Gets the value at index 37.
+         * @return the value at index 37.
+         */
+        @Override
         public K38 getValue37() {
             return this.val37;
         }
 
+        /**
+         * Gets the value at index 37.
+         * @return the value at index 37.
+         */
+        @Override
+        public K38 get37() {
+            return this.val37;
+        }
+
+        /**
+         * Gets the value at index 38.
+         * @return the value at index 38.
+         */
+        @Override
         public K39 getValue38() {
             return this.val38;
         }
 
+        /**
+         * Gets the value at index 38.
+         * @return the value at index 38.
+         */
+        @Override
+        public K39 get38() {
+            return this.val38;
+        }
+
+        /**
+         * Gets the value at index 39.
+         * @return the value at index 39.
+         */
+        @Override
         public K40 getValue39() {
             return this.val39;
         }
 
+        /**
+         * Gets the value at index 39.
+         * @return the value at index 39.
+         */
+        @Override
+        public K40 get39() {
+            return this.val39;
+        }
+
+        /**
+         * Gets the value at index 40.
+         * @return the value at index 40.
+         */
+        @Override
         public K41 getValue40() {
             return this.val40;
         }
 
+        /**
+         * Gets the value at index 40.
+         * @return the value at index 40.
+         */
+        @Override
+        public K41 get40() {
+            return this.val40;
+        }
+
+        /**
+         * Gets the value at index 41.
+         * @return the value at index 41.
+         */
+        @Override
         public K42 getValue41() {
             return this.val41;
         }
 
+        /**
+         * Gets the value at index 41.
+         * @return the value at index 41.
+         */
+        @Override
+        public K42 get41() {
+            return this.val41;
+        }
+
+        /**
+         * Gets the value at index 42.
+         * @return the value at index 42.
+         */
+        @Override
         public K43 getValue42() {
             return this.val42;
         }
 
+        /**
+         * Gets the value at index 42.
+         * @return the value at index 42.
+         */
+        @Override
+        public K43 get42() {
+            return this.val42;
+        }
+
+        /**
+         * Gets the value at index 43.
+         * @return the value at index 43.
+         */
+        @Override
         public K44 getValue43() {
             return this.val43;
         }
 
+        /**
+         * Gets the value at index 43.
+         * @return the value at index 43.
+         */
+        @Override
+        public K44 get43() {
+            return this.val43;
+        }
+
+        /**
+         * Gets the value at index 44.
+         * @return the value at index 44.
+         */
+        @Override
         public K45 getValue44() {
             return this.val44;
         }
 
+        /**
+         * Gets the value at index 44.
+         * @return the value at index 44.
+         */
+        @Override
+        public K45 get44() {
+            return this.val44;
+        }
+
+        /**
+         * Gets the value at index 45.
+         * @return the value at index 45.
+         */
+        @Override
         public K46 getValue45() {
             return this.val45;
         }
 
+        /**
+         * Gets the value at index 45.
+         * @return the value at index 45.
+         */
+        @Override
+        public K46 get45() {
+            return this.val45;
+        }
+
+        /**
+         * Gets the value at index 46.
+         * @return the value at index 46.
+         */
+        @Override
         public K47 getValue46() {
             return this.val46;
         }
 
+        /**
+         * Gets the value at index 46.
+         * @return the value at index 46.
+         */
+        @Override
+        public K47 get46() {
+            return this.val46;
+        }
+
+        /**
+         * Gets the value at index 47.
+         * @return the value at index 47.
+         */
+        @Override
         public K48 getValue47() {
             return this.val47;
         }
 
+        /**
+         * Gets the value at index 47.
+         * @return the value at index 47.
+         */
+        @Override
+        public K48 get47() {
+            return this.val47;
+        }
+
+        /**
+         * Gets the value at index 48.
+         * @return the value at index 48.
+         */
+        @Override
         public K49 getValue48() {
             return this.val48;
         }
 
+        /**
+         * Gets the value at index 48.
+         * @return the value at index 48.
+         */
+        @Override
+        public K49 get48() {
+            return this.val48;
+        }
+
+        /**
+         * Gets the value at index 49.
+         * @return the value at index 49.
+         */
+        @Override
         public K50 getValue49() {
             return this.val49;
         }
 
+        /**
+         * Gets the value at index 49.
+         * @return the value at index 49.
+         */
+        @Override
+        public K50 get49() {
+            return this.val49;
+        }
+
+        /**
+         * Gets the value at index 50.
+         * @return the value at index 50.
+         */
+        @Override
         public K51 getValue50() {
             return this.val50;
         }
 
+        /**
+         * Gets the value at index 50.
+         * @return the value at index 50.
+         */
+        @Override
+        public K51 get50() {
+            return this.val50;
+        }
+
+        /**
+         * Gets the value at index 51.
+         * @return the value at index 51.
+         */
+        @Override
         public K52 getValue51() {
             return this.val51;
         }
 
+        /**
+         * Gets the value at index 51.
+         * @return the value at index 51.
+         */
+        @Override
+        public K52 get51() {
+            return this.val51;
+        }
+
+        /**
+         * Gets the value at index 52.
+         * @return the value at index 52.
+         */
+        @Override
         public K53 getValue52() {
             return this.val52;
+        }
+
+        /**
+         * Gets the value at index 52.
+         * @return the value at index 52.
+         */
+        @Override
+        public K53 get52() {
+            return this.val52;
+        }
+
+        /**
+         * @return the first / leftmost element in this tuple.
+         */
+        @Override
+        public K1 getLeft() {
+            return this.val0;
+        }
+
+        /**
+         * @return the last / rightmost element in this tuple.
+         */
+        @Override
+        public K53 getRight() {
+            return this.val52;
+        }
+
+        /**
+         * @return a stream containing each element in this tuple in its current state.
+         */
+        public Stream <Object> stream() {
+            return Arrays.stream(new Object[] {
+                val0,
+                val1,
+                val2,
+                val3,
+                val4,
+                val5,
+                val6,
+                val7,
+                val8,
+                val9,
+                val10,
+                val11,
+                val12,
+                val13,
+                val14,
+                val15,
+                val16,
+                val17,
+                val18,
+                val19,
+                val20,
+                val21,
+                val22,
+                val23,
+                val24,
+                val25,
+                val26,
+                val27,
+                val28,
+                val29,
+                val30,
+                val31,
+                val32,
+                val33,
+                val34,
+                val35,
+                val36,
+                val37,
+                val38,
+                val39,
+                val40,
+                val41,
+                val42,
+                val43,
+                val44,
+                val45,
+                val46,
+                val47,
+                val48,
+                val49,
+                val50,
+                val51,
+                val52
+            });
+        }
+
+        /**
+         * @return an array representation of this tuple.
+         */
+        public Object[] toArray() {
+            return new Object[] {
+                val0,
+                val1,
+                val2,
+                val3,
+                val4,
+                val5,
+                val6,
+                val7,
+                val8,
+                val9,
+                val10,
+                val11,
+                val12,
+                val13,
+                val14,
+                val15,
+                val16,
+                val17,
+                val18,
+                val19,
+                val20,
+                val21,
+                val22,
+                val23,
+                val24,
+                val25,
+                val26,
+                val27,
+                val28,
+                val29,
+                val30,
+                val31,
+                val32,
+                val33,
+                val34,
+                val35,
+                val36,
+                val37,
+                val38,
+                val39,
+                val40,
+                val41,
+                val42,
+                val43,
+                val44,
+                val45,
+                val46,
+                val47,
+                val48,
+                val49,
+                val50,
+                val51,
+                val52
+            };
+        }
+
+        /**
+         * @return an array representation of this tuple.
+         */
+        public String toString() {
+            return "Tuple53 [" + Arrays.toString(new Object[] {
+                val0,
+                val1,
+                val2,
+                val3,
+                val4,
+                val5,
+                val6,
+                val7,
+                val8,
+                val9,
+                val10,
+                val11,
+                val12,
+                val13,
+                val14,
+                val15,
+                val16,
+                val17,
+                val18,
+                val19,
+                val20,
+                val21,
+                val22,
+                val23,
+                val24,
+                val25,
+                val26,
+                val27,
+                val28,
+                val29,
+                val30,
+                val31,
+                val32,
+                val33,
+                val34,
+                val35,
+                val36,
+                val37,
+                val38,
+                val39,
+                val40,
+                val41,
+                val42,
+                val43,
+                val44,
+                val45,
+                val46,
+                val47,
+                val48,
+                val49,
+                val50,
+                val51,
+                val52
+            }) + "]";
         }
 
         @Override

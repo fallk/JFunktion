@@ -1,6 +1,8 @@
 package club.bonerbrew.tuples;
 
 import java.util.Iterator;
+import java.util.Arrays;
+import java.util.stream.Stream;
 
 import club.bonerbrew.tuples.values.IValue0;
 import club.bonerbrew.tuples.values.IValue1;
@@ -63,7 +65,49 @@ public final class Tuple17 <K1,K2,K3,K4,K5,K6,K7,K8,K9,K10,K11,K12,K13,K14,K15,K
         private final K16 val15;
         private final K17 val16;
 
+        /**
+         * Creates a tuple with 17 elements. Pretty straightforward, isn't it?
+         */
         public static <K1,K2,K3,K4,K5,K6,K7,K8,K9,K10,K11,K12,K13,K14,K15,K16,K17> Tuple17 <K1,K2,K3,K4,K5,K6,K7,K8,K9,K10,K11,K12,K13,K14,K15,K16,K17> with(final K1 value0,
+            final K2 value1,
+            final K3 value2,
+            final K4 value3,
+            final K5 value4,
+            final K6 value5,
+            final K7 value6,
+            final K8 value7,
+            final K9 value8,
+            final K10 value9,
+            final K11 value10,
+            final K12 value11,
+            final K13 value12,
+            final K14 value13,
+            final K15 value14,
+            final K16 value15,
+            final K17 value16) {
+            return new Tuple17 <K1,K2,K3,K4,K5,K6,K7,K8,K9,K10,K11,K12,K13,K14,K15,K16,K17> (value0,
+                value1,
+                value2,
+                value3,
+                value4,
+                value5,
+                value6,
+                value7,
+                value8,
+                value9,
+                value10,
+                value11,
+                value12,
+                value13,
+                value14,
+                value15,
+                value16);
+        }
+
+        /**
+         * Creates a tuple with 17 elements. Pretty straightforward, isn't it?
+         */
+        public static <K1,K2,K3,K4,K5,K6,K7,K8,K9,K10,K11,K12,K13,K14,K15,K16,K17> Tuple17 <K1,K2,K3,K4,K5,K6,K7,K8,K9,K10,K11,K12,K13,K14,K15,K16,K17> of (final K1 value0,
             final K2 value1,
             final K3 value2,
             final K4 value3,
@@ -296,72 +340,401 @@ public final class Tuple17 <K1,K2,K3,K4,K5,K6,K7,K8,K9,K10,K11,K12,K13,K14,K15,K
             this.val16 = value16;
         }
 
+        /**
+         * Gets the value at index 0.
+         * @return the value at index 0.
+         */
+        @Override
         public K1 getValue0() {
             return this.val0;
         }
 
+        /**
+         * Gets the value at index 0.
+         * @return the value at index 0.
+         */
+        @Override
+        public K1 get0() {
+            return this.val0;
+        }
+
+        /**
+         * Gets the value at index 1.
+         * @return the value at index 1.
+         */
+        @Override
         public K2 getValue1() {
             return this.val1;
         }
 
+        /**
+         * Gets the value at index 1.
+         * @return the value at index 1.
+         */
+        @Override
+        public K2 get1() {
+            return this.val1;
+        }
+
+        /**
+         * Gets the value at index 2.
+         * @return the value at index 2.
+         */
+        @Override
         public K3 getValue2() {
             return this.val2;
         }
 
+        /**
+         * Gets the value at index 2.
+         * @return the value at index 2.
+         */
+        @Override
+        public K3 get2() {
+            return this.val2;
+        }
+
+        /**
+         * Gets the value at index 3.
+         * @return the value at index 3.
+         */
+        @Override
         public K4 getValue3() {
             return this.val3;
         }
 
+        /**
+         * Gets the value at index 3.
+         * @return the value at index 3.
+         */
+        @Override
+        public K4 get3() {
+            return this.val3;
+        }
+
+        /**
+         * Gets the value at index 4.
+         * @return the value at index 4.
+         */
+        @Override
         public K5 getValue4() {
             return this.val4;
         }
 
+        /**
+         * Gets the value at index 4.
+         * @return the value at index 4.
+         */
+        @Override
+        public K5 get4() {
+            return this.val4;
+        }
+
+        /**
+         * Gets the value at index 5.
+         * @return the value at index 5.
+         */
+        @Override
         public K6 getValue5() {
             return this.val5;
         }
 
+        /**
+         * Gets the value at index 5.
+         * @return the value at index 5.
+         */
+        @Override
+        public K6 get5() {
+            return this.val5;
+        }
+
+        /**
+         * Gets the value at index 6.
+         * @return the value at index 6.
+         */
+        @Override
         public K7 getValue6() {
             return this.val6;
         }
 
+        /**
+         * Gets the value at index 6.
+         * @return the value at index 6.
+         */
+        @Override
+        public K7 get6() {
+            return this.val6;
+        }
+
+        /**
+         * Gets the value at index 7.
+         * @return the value at index 7.
+         */
+        @Override
         public K8 getValue7() {
             return this.val7;
         }
 
+        /**
+         * Gets the value at index 7.
+         * @return the value at index 7.
+         */
+        @Override
+        public K8 get7() {
+            return this.val7;
+        }
+
+        /**
+         * Gets the value at index 8.
+         * @return the value at index 8.
+         */
+        @Override
         public K9 getValue8() {
             return this.val8;
         }
 
+        /**
+         * Gets the value at index 8.
+         * @return the value at index 8.
+         */
+        @Override
+        public K9 get8() {
+            return this.val8;
+        }
+
+        /**
+         * Gets the value at index 9.
+         * @return the value at index 9.
+         */
+        @Override
         public K10 getValue9() {
             return this.val9;
         }
 
+        /**
+         * Gets the value at index 9.
+         * @return the value at index 9.
+         */
+        @Override
+        public K10 get9() {
+            return this.val9;
+        }
+
+        /**
+         * Gets the value at index 10.
+         * @return the value at index 10.
+         */
+        @Override
         public K11 getValue10() {
             return this.val10;
         }
 
+        /**
+         * Gets the value at index 10.
+         * @return the value at index 10.
+         */
+        @Override
+        public K11 get10() {
+            return this.val10;
+        }
+
+        /**
+         * Gets the value at index 11.
+         * @return the value at index 11.
+         */
+        @Override
         public K12 getValue11() {
             return this.val11;
         }
 
+        /**
+         * Gets the value at index 11.
+         * @return the value at index 11.
+         */
+        @Override
+        public K12 get11() {
+            return this.val11;
+        }
+
+        /**
+         * Gets the value at index 12.
+         * @return the value at index 12.
+         */
+        @Override
         public K13 getValue12() {
             return this.val12;
         }
 
+        /**
+         * Gets the value at index 12.
+         * @return the value at index 12.
+         */
+        @Override
+        public K13 get12() {
+            return this.val12;
+        }
+
+        /**
+         * Gets the value at index 13.
+         * @return the value at index 13.
+         */
+        @Override
         public K14 getValue13() {
             return this.val13;
         }
 
+        /**
+         * Gets the value at index 13.
+         * @return the value at index 13.
+         */
+        @Override
+        public K14 get13() {
+            return this.val13;
+        }
+
+        /**
+         * Gets the value at index 14.
+         * @return the value at index 14.
+         */
+        @Override
         public K15 getValue14() {
             return this.val14;
         }
 
+        /**
+         * Gets the value at index 14.
+         * @return the value at index 14.
+         */
+        @Override
+        public K15 get14() {
+            return this.val14;
+        }
+
+        /**
+         * Gets the value at index 15.
+         * @return the value at index 15.
+         */
+        @Override
         public K16 getValue15() {
             return this.val15;
         }
 
+        /**
+         * Gets the value at index 15.
+         * @return the value at index 15.
+         */
+        @Override
+        public K16 get15() {
+            return this.val15;
+        }
+
+        /**
+         * Gets the value at index 16.
+         * @return the value at index 16.
+         */
+        @Override
         public K17 getValue16() {
             return this.val16;
+        }
+
+        /**
+         * Gets the value at index 16.
+         * @return the value at index 16.
+         */
+        @Override
+        public K17 get16() {
+            return this.val16;
+        }
+
+        /**
+         * @return the first / leftmost element in this tuple.
+         */
+        @Override
+        public K1 getLeft() {
+            return this.val0;
+        }
+
+        /**
+         * @return the last / rightmost element in this tuple.
+         */
+        @Override
+        public K17 getRight() {
+            return this.val16;
+        }
+
+        /**
+         * @return a stream containing each element in this tuple in its current state.
+         */
+        public Stream <Object> stream() {
+            return Arrays.stream(new Object[] {
+                val0,
+                val1,
+                val2,
+                val3,
+                val4,
+                val5,
+                val6,
+                val7,
+                val8,
+                val9,
+                val10,
+                val11,
+                val12,
+                val13,
+                val14,
+                val15,
+                val16
+            });
+        }
+
+        /**
+         * @return an array representation of this tuple.
+         */
+        public Object[] toArray() {
+            return new Object[] {
+                val0,
+                val1,
+                val2,
+                val3,
+                val4,
+                val5,
+                val6,
+                val7,
+                val8,
+                val9,
+                val10,
+                val11,
+                val12,
+                val13,
+                val14,
+                val15,
+                val16
+            };
+        }
+
+        /**
+         * @return an array representation of this tuple.
+         */
+        public String toString() {
+            return "Tuple17 [" + Arrays.toString(new Object[] {
+                val0,
+                val1,
+                val2,
+                val3,
+                val4,
+                val5,
+                val6,
+                val7,
+                val8,
+                val9,
+                val10,
+                val11,
+                val12,
+                val13,
+                val14,
+                val15,
+                val16
+            }) + "]";
         }
 
         @Override

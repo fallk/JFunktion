@@ -1,6 +1,8 @@
 package club.bonerbrew.tuples;
 
 import java.util.Iterator;
+import java.util.Arrays;
+import java.util.stream.Stream;
 
 import club.bonerbrew.tuples.values.IValue0;
 
@@ -15,7 +17,17 @@ public final class Tuple1 <K1>
 
         private final K1 val0;
 
+        /**
+         * Creates a tuple with 1 elements. Pretty straightforward, isn't it?
+         */
         public static <K1> Tuple1 <K1> with(final K1 value0) {
+            return new Tuple1 <K1> (value0);
+        }
+
+        /**
+         * Creates a tuple with 1 elements. Pretty straightforward, isn't it?
+         */
+        public static <K1> Tuple1 <K1> of (final K1 value0) {
             return new Tuple1 <K1> (value0);
         }
 
@@ -72,8 +84,65 @@ public final class Tuple1 <K1>
             this.val0 = value0;
         }
 
+        /**
+         * Gets the value at index 0.
+         * @return the value at index 0.
+         */
+        @Override
         public K1 getValue0() {
             return this.val0;
+        }
+
+        /**
+         * Gets the value at index 0.
+         * @return the value at index 0.
+         */
+        @Override
+        public K1 get0() {
+            return this.val0;
+        }
+
+        /**
+         * @return the first / leftmost element in this tuple.
+         */
+        @Override
+        public K1 getLeft() {
+            return this.val0;
+        }
+
+        /**
+         * @return the last / rightmost element in this tuple.
+         */
+        @Override
+        public K1 getRight() {
+            return this.val0;
+        }
+
+        /**
+         * @return a stream containing each element in this tuple in its current state.
+         */
+        public Stream <Object> stream() {
+            return Arrays.stream(new Object[] {
+                val0
+            });
+        }
+
+        /**
+         * @return an array representation of this tuple.
+         */
+        public Object[] toArray() {
+            return new Object[] {
+                val0
+            };
+        }
+
+        /**
+         * @return an array representation of this tuple.
+         */
+        public String toString() {
+            return "Tuple1 [" + Arrays.toString(new Object[] {
+                val0
+            }) + "]";
         }
 
         @Override

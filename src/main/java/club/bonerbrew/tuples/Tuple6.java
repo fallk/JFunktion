@@ -1,6 +1,8 @@
 package club.bonerbrew.tuples;
 
 import java.util.Iterator;
+import java.util.Arrays;
+import java.util.stream.Stream;
 
 import club.bonerbrew.tuples.values.IValue0;
 import club.bonerbrew.tuples.values.IValue1;
@@ -30,7 +32,27 @@ public final class Tuple6 <K1,K2,K3,K4,K5,K6>
         private final K5 val4;
         private final K6 val5;
 
+        /**
+         * Creates a tuple with 6 elements. Pretty straightforward, isn't it?
+         */
         public static <K1,K2,K3,K4,K5,K6> Tuple6 <K1,K2,K3,K4,K5,K6> with(final K1 value0,
+            final K2 value1,
+            final K3 value2,
+            final K4 value3,
+            final K5 value4,
+            final K6 value5) {
+            return new Tuple6 <K1,K2,K3,K4,K5,K6> (value0,
+                value1,
+                value2,
+                value3,
+                value4,
+                value5);
+        }
+
+        /**
+         * Creates a tuple with 6 elements. Pretty straightforward, isn't it?
+         */
+        public static <K1,K2,K3,K4,K5,K6> Tuple6 <K1,K2,K3,K4,K5,K6> of (final K1 value0,
             final K2 value1,
             final K3 value2,
             final K4 value3,
@@ -142,28 +164,170 @@ public final class Tuple6 <K1,K2,K3,K4,K5,K6>
             this.val5 = value5;
         }
 
+        /**
+         * Gets the value at index 0.
+         * @return the value at index 0.
+         */
+        @Override
         public K1 getValue0() {
             return this.val0;
         }
 
+        /**
+         * Gets the value at index 0.
+         * @return the value at index 0.
+         */
+        @Override
+        public K1 get0() {
+            return this.val0;
+        }
+
+        /**
+         * Gets the value at index 1.
+         * @return the value at index 1.
+         */
+        @Override
         public K2 getValue1() {
             return this.val1;
         }
 
+        /**
+         * Gets the value at index 1.
+         * @return the value at index 1.
+         */
+        @Override
+        public K2 get1() {
+            return this.val1;
+        }
+
+        /**
+         * Gets the value at index 2.
+         * @return the value at index 2.
+         */
+        @Override
         public K3 getValue2() {
             return this.val2;
         }
 
+        /**
+         * Gets the value at index 2.
+         * @return the value at index 2.
+         */
+        @Override
+        public K3 get2() {
+            return this.val2;
+        }
+
+        /**
+         * Gets the value at index 3.
+         * @return the value at index 3.
+         */
+        @Override
         public K4 getValue3() {
             return this.val3;
         }
 
+        /**
+         * Gets the value at index 3.
+         * @return the value at index 3.
+         */
+        @Override
+        public K4 get3() {
+            return this.val3;
+        }
+
+        /**
+         * Gets the value at index 4.
+         * @return the value at index 4.
+         */
+        @Override
         public K5 getValue4() {
             return this.val4;
         }
 
+        /**
+         * Gets the value at index 4.
+         * @return the value at index 4.
+         */
+        @Override
+        public K5 get4() {
+            return this.val4;
+        }
+
+        /**
+         * Gets the value at index 5.
+         * @return the value at index 5.
+         */
+        @Override
         public K6 getValue5() {
             return this.val5;
+        }
+
+        /**
+         * Gets the value at index 5.
+         * @return the value at index 5.
+         */
+        @Override
+        public K6 get5() {
+            return this.val5;
+        }
+
+        /**
+         * @return the first / leftmost element in this tuple.
+         */
+        @Override
+        public K1 getLeft() {
+            return this.val0;
+        }
+
+        /**
+         * @return the last / rightmost element in this tuple.
+         */
+        @Override
+        public K6 getRight() {
+            return this.val5;
+        }
+
+        /**
+         * @return a stream containing each element in this tuple in its current state.
+         */
+        public Stream <Object> stream() {
+            return Arrays.stream(new Object[] {
+                val0,
+                val1,
+                val2,
+                val3,
+                val4,
+                val5
+            });
+        }
+
+        /**
+         * @return an array representation of this tuple.
+         */
+        public Object[] toArray() {
+            return new Object[] {
+                val0,
+                val1,
+                val2,
+                val3,
+                val4,
+                val5
+            };
+        }
+
+        /**
+         * @return an array representation of this tuple.
+         */
+        public String toString() {
+            return "Tuple6 [" + Arrays.toString(new Object[] {
+                val0,
+                val1,
+                val2,
+                val3,
+                val4,
+                val5
+            }) + "]";
         }
 
         @Override

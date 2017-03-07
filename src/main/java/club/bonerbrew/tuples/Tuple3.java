@@ -1,6 +1,8 @@
 package club.bonerbrew.tuples;
 
 import java.util.Iterator;
+import java.util.Arrays;
+import java.util.stream.Stream;
 
 import club.bonerbrew.tuples.values.IValue0;
 import club.bonerbrew.tuples.values.IValue1;
@@ -21,7 +23,21 @@ public final class Tuple3 <K1,K2,K3>
         private final K2 val1;
         private final K3 val2;
 
+        /**
+         * Creates a tuple with 3 elements. Pretty straightforward, isn't it?
+         */
         public static <K1,K2,K3> Tuple3 <K1,K2,K3> with(final K1 value0,
+            final K2 value1,
+            final K3 value2) {
+            return new Tuple3 <K1,K2,K3> (value0,
+                value1,
+                value2);
+        }
+
+        /**
+         * Creates a tuple with 3 elements. Pretty straightforward, isn't it?
+         */
+        public static <K1,K2,K3> Tuple3 <K1,K2,K3> of (final K1 value0,
             final K2 value1,
             final K3 value2) {
             return new Tuple3 <K1,K2,K3> (value0,
@@ -100,16 +116,107 @@ public final class Tuple3 <K1,K2,K3>
             this.val2 = value2;
         }
 
+        /**
+         * Gets the value at index 0.
+         * @return the value at index 0.
+         */
+        @Override
         public K1 getValue0() {
             return this.val0;
         }
 
+        /**
+         * Gets the value at index 0.
+         * @return the value at index 0.
+         */
+        @Override
+        public K1 get0() {
+            return this.val0;
+        }
+
+        /**
+         * Gets the value at index 1.
+         * @return the value at index 1.
+         */
+        @Override
         public K2 getValue1() {
             return this.val1;
         }
 
+        /**
+         * Gets the value at index 1.
+         * @return the value at index 1.
+         */
+        @Override
+        public K2 get1() {
+            return this.val1;
+        }
+
+        /**
+         * Gets the value at index 2.
+         * @return the value at index 2.
+         */
+        @Override
         public K3 getValue2() {
             return this.val2;
+        }
+
+        /**
+         * Gets the value at index 2.
+         * @return the value at index 2.
+         */
+        @Override
+        public K3 get2() {
+            return this.val2;
+        }
+
+        /**
+         * @return the first / leftmost element in this tuple.
+         */
+        @Override
+        public K1 getLeft() {
+            return this.val0;
+        }
+
+        /**
+         * @return the last / rightmost element in this tuple.
+         */
+        @Override
+        public K3 getRight() {
+            return this.val2;
+        }
+
+        /**
+         * @return a stream containing each element in this tuple in its current state.
+         */
+        public Stream <Object> stream() {
+            return Arrays.stream(new Object[] {
+                val0,
+                val1,
+                val2
+            });
+        }
+
+        /**
+         * @return an array representation of this tuple.
+         */
+        public Object[] toArray() {
+            return new Object[] {
+                val0,
+                val1,
+                val2
+            };
+        }
+
+        /**
+         * @return an array representation of this tuple.
+         */
+        public String toString() {
+            return "Tuple3 [" + Arrays.toString(new Object[] {
+                val0,
+                val1,
+                val2
+            }) + "]";
         }
 
         @Override
