@@ -3,12 +3,20 @@
 
 const fs = require('fs');
 
-const primitives = [
+const _primitives = [
   "byte", "short", "int", "long", "float", "double", "boolean", "char", 
 ];
 
-const capPrimitives = [
+const _capPrimitives = [
   "Byte", "Short", "Int", "Long", "Float", "Double", "Boolean", "Char", 
+];
+
+const _jrePrimitiveNames = [
+  "Byte", "Short", "Integer", "Long", "Float", "Double", "Boolean", "Character",
+];
+
+const _zero = [
+  "0", "0", "0", "0L", "0.0F", "0.0D", "false", "0",
 ];
 
 function findPrimitives(str) {
@@ -35,7 +43,7 @@ function doCallManyTimes(maxIndices, func, args, index) {
     if (maxIndices.length === 0) {
         func(args);
     } else {
-        var rest = maxIndices.slice(1);
+        const rest = maxIndices.slice(1);
         for (args[index] = 0; args[index] < maxIndices[0]; ++args[index]) {
             doCallManyTimes(rest, func, args, index + 1);
         }
@@ -45,8 +53,8 @@ function doCallManyTimes(maxIndices, func, args, index) {
 // END COOL THING
 
 function fillArray(value, len) {
-  var arr = [];
-  for (var i = 0; i < len; i++) {
+  const arr = [];
+  for (let i = 0; i < len; i++) {
     arr.push(value);
   }
   return arr;
@@ -59,21 +67,56 @@ for (const file of files) {
 
   const numPrimitives = findPrimitives(str);
 
+  let primitives = [..._primitives];
+  let capPrimitives = [..._capPrimitives];
+  let jrePrimitiveNames = [..._jrePrimitiveNames];
+  let zero = [..._zero];
+
+  let _package = 'jfunktion';
+
+  // no assignment, no problemo!
+  //noinspection JSUnusedLocalSymbols
+  str.replace(/\$blacklist:(\w+)\$/g, ($0, $1, $offset, $full) => {
+    let index = primitives.indexOf($1);
+
+    primitives.splice(index, 1);
+    capPrimitives.splice(index, 1);
+    jrePrimitiveNames.splice(index, 1);
+    zero.splice(index, 1);
+
+    console.log('Removed ' + $1);
+    return '';
+  });
+  str.replace(/\$package:(\w+)\$/, ($0, $1) => {
+    _package = $1;
+    return '';
+  });
+
   const len = primitives.length;
 
   callManyTimes(fillArray(len, numPrimitives), possibles => {//jshint ignore:line
     let s = str;
     let f = file;
     for (let i = 0; i < possibles.length; i++) {
-      let re = new RegExp("\\$primitive" + (i+1===1?'':(i+1)) + "\\$", 'g');
-      let re2 = new RegExp("\\$primitiveFmt" + (i+1===1?'':(i+1)) + "\\$", 'g');
+      const num = (i+1===1?'':(i+1));
+      let re = new RegExp("\\$primitive" + num + "\\$", 'g');
+      let re2 = new RegExp("\\$primitiveFmt" + num + "\\$", 'g');
+      let re3 = new RegExp("\\$primitiveNtv" + num + "\\$", 'g');
+      let re4 = new RegExp("\\$primitiveZero" + num + "\\$", 'g');
       //console.log('re', re, re2);
-      s = s.replace(re, primitives[possibles[i]]);
-      s = s.replace(re2, capPrimitives[possibles[i]]);
-      f = f.replace(re, primitives[possibles[i]]);
-      f = f.replace(re2, capPrimitives[possibles[i]]);
+      const id = possibles[i];
+      s = s.replace(re, primitives[id]);
+      s = s.replace(re2, capPrimitives[id]);
+      s = s.replace(re3, jrePrimitiveNames[id]);
+      s = s.replace(re4, zero[id]);
+
+      f = f.replace(re, primitives[id]);
+      f = f.replace(re2, capPrimitives[id]);
+      f = f.replace(re3, jrePrimitiveNames[id]);
+      f = f.replace(re4, zero[id]);
     }
-    fs.writeFileSync('./src/main/java/club/bonerbrew/jfunktion/' + f, s);
+    try { fs.mkdirSync('./src/main/java/club/bonerbrew/' + _package); } catch (e) {}
+    fs.writeFileSync('./src/main/java/club/bonerbrew/' + _package + '/' + f, s);
   });
 
 }
