@@ -258,7 +258,7 @@ public class ShortStream implements IntStream {
      * upstream operation.  If the action modifies shared state,
      * it is responsible for providing the required synchronization.
      *
-     * @apiNote This method exists mainly to support debugging, where you want
+     * API Note: This method exists mainly to support debugging, where you want
      * to see the elements as they flow past a certain point in a pipeline:
      * <pre>{@code
      *     IntStream.of(1, 2, 3, 4)
@@ -288,7 +288,7 @@ public class ShortStream implements IntStream {
      * @param maxSize the number of elements the stream should be limited to
      * @return the new stream
      * @throws IllegalArgumentException if {@code maxSize} is negative
-     * @apiNote While {@code limit()} is generally a cheap operation on sequential
+     * API Note: While {@code limit()} is generally a cheap operation on sequential
      * stream pipelines, it can be quite expensive on ordered parallel pipelines,
      * especially for large values of {@code maxSize}, since {@code limit(n)}
      * is constrained to return not just any <em>n</em> elements, but the
@@ -383,7 +383,7 @@ public class ShortStream implements IntStream {
      * <p>This is a <a href="package-summary.html#StreamOps">terminal
      * operation</a>.
      *
-     * @apiNote Sum, min, max, and average are all special cases of reduction.
+     * API Note: Sum, min, max, and average are all special cases of reduction.
      * Summing a stream of numbers can be expressed as:
      *
      * <pre>{@code
