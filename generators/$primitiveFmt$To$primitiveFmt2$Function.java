@@ -5,7 +5,7 @@ package club.bonerbrew.jfunktion;
 /**
  * Represents a function that accepts a $primitive$-valued argument and produces an
  * $primitive2$-valued result.  This is the {@code $primitive$}-to-{@code $primitive2$} primitive
- * specialization for {@link Function}.
+ * specialization for {@link java.util.function.Function}.
  *
  * @see java.util.function.Function
  * @since 1.8
