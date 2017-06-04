@@ -44,6 +44,9 @@ branches:
     - gh-pages
 os: Windows Server 2012
 install:
+  # Get the latest stable version of Node.js or io.js
+  - ps: Install-Product node $env:nodejs_version
+  # Install maven
   - ps: |
       Add-Type -AssemblyName System.IO.Compression.FileSystem
       if (!(Test-Path -Path "C:\maven" )) {
@@ -59,6 +62,10 @@ install:
 build_script:
   - mvn clean package -B -Dmaven.test.skip=true
 test_script:
+  # Output useful info for debugging.
+  - node --version
+  - npm --version
+  # Maven test
   - mvn clean install --batch-mode -Pqulice
 cache:
 #  - C:\maven\
