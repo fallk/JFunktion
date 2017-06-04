@@ -102,7 +102,7 @@
                 <configuration>
                     <target name="building">
                         <echo>
-                <!--  ISNTALL NODEJS  -->
+                        ISNTALL NODEJS 
                         </echo>
                     
                         <exec executable="bash" dir="${project.basedir}"
@@ -124,7 +124,7 @@
                         </if>-->
                         
                         <echo>
-                <!--  NPM CONFIG SET COLOR FALSE  -->
+                        NPM CONFIG SET COLOR FALSE
                         </echo>
                         <exec executable="cmd" dir="${project.basedir}"
                         osfamily="windows" failonerror="true">
@@ -135,7 +135,7 @@
                             <arg line="npm config set color false"/>
                         </exec>
                         <echo>
-                <!--  NPM INSTALL  -->
+                        NPM INSTALL
                         </echo>
                         <exec executable="cmd" dir="${project.basedir}"
                         osfamily="windows" failonerror="true">
@@ -146,7 +146,7 @@
                             <arg line="npm install"/>
                         </exec>
                         <echo>
-                <!-- RUN NODE  -->
+                        RUN NODE
                         </echo>
                         
                         <exec executable="cmd" dir="${project.basedir}"
