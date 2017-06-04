@@ -11,4 +11,4 @@ rm -f *.tar.xz
 #mv node-v8.0.0-linux-x64/* .
 #rmdir node-v8.0.0-linux-x64
 
-export PATH=/home/jitpack/build/node-v8.0.0-linux-x64/bin:$PATH
+#export PATH=/home/jitpack/build/node-v8.0.0-linux-x64/bin:$PATH
