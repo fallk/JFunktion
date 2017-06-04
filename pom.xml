@@ -26,101 +26,134 @@
       </dependency> -->
   </dependencies>
   
-<build>
-  <plugins>
-    <plugin>
-      <groupId>org.apache.maven.plugins</groupId>
-      <artifactId>maven-source-plugin</artifactId>
-      <executions>
-        <execution>
-          <id>attach-sources</id>
-          <goals>
-            <goal>jar</goal>
-          </goals>
-        </execution>
-      </executions>
-    </plugin>
-    <plugin>
-      <groupId>org.apache.maven.plugins</groupId>
-      <artifactId>maven-javadoc-plugin</artifactId>
-      <executions>
-        <execution>
-          <id>attach-javadocs</id>
-          <goals>
-            <goal>jar</goal>
-          </goals>
-        </execution>
-      </executions>
-    </plugin>
+  <profiles>
+      <profile>
+        <id>java8-doclint-disabled</id>
+        <activation>
+          <jdk>[1.8,)</jdk>
+        </activation>
+        <properties>
+          <javadoc.opts>-Xdoclint:none</javadoc.opts>
+        </properties>
+      </profile>
+    </profiles>
     
-    
-
-    <plugin>
-      <artifactId>maven-antrun-plugin</artifactId>
-      <version>1.7</version>
-      <executions>
-          <execution>
-            <phase>generate-sources</phase>
+    <build>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-source-plugin</artifactId>
+          <executions>
+            <execution>
+              <id>attach-sources</id>
+              <goals>
+                <goal>jar</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+        
+        
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-javadoc-plugin</artifactId>
+            <version>2.9</version>
+            <executions>
+                <execution>
+                    <id>attach-javadocs</id>
+                    <goals>
+                        <goal>jar</goal>
+                    </goals>
+                    <configuration>
+                        <additionalparam>${javadoc.opts}</additionalparam>
+                    </configuration>
+                </execution>
+            </executions>
+        </plugin>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-site-plugin</artifactId>
+            <version>3.3</version>
             <configuration>
-                <target name="building">
-                    <echo>
-            <!--  NPM CONFIG SET COLOR FALSE  -->
-                    </echo>
-                    <exec executable="cmd" dir="${project.basedir}"
-                    osfamily="windows" failonerror="true">
-                        <arg line="/c npm config set color false"/>
-                    </exec>
-                    <exec executable="bash" dir="${project.basedir}"
-                    osfamily="unix" failonerror="true">
-                        <arg line="npm config set color false"/>
-                    </exec>
-                    <echo>
-            <!--  NPM INSTALL  -->
-                    </echo>
-                    <exec executable="cmd" dir="${project.basedir}"
-                    osfamily="windows" failonerror="true">
-                        <arg line="/c npm install"/>
-                    </exec>
-                    <exec executable="bash" dir="${project.basedir}"
-                    osfamily="unix" failonerror="true">
-                        <arg line="npm install"/>
-                    </exec>
-                    <echo>
-            <!-- RUN NODE  -->
-                    </echo>
-                    
-                    <exec executable="cmd" dir="${project.basedir}"
-                    osfamily="windows" failonerror="true">
-                        <arg line="/c node generator"/>
-                    </exec>
-                    <exec executable="bash" dir="${project.basedir}"
-                    osfamily="unix" failonerror="true">
-                        <arg line="node generator"/>
-                    </exec>
-                    
-                    <exec executable="cmd" dir="${project.basedir}"
-                    osfamily="windows" failonerror="true">
-                        <arg line="/c node newgen"/>
-                    </exec>
-                    <exec executable="bash" dir="${project.basedir}"
-                    osfamily="unix" failonerror="true">
-                        <arg line="node newgen"/>
-                    </exec>
-                    
-                    <!--<condition property="cmdsuccess">
-                        <equals arg1="${cmdresult}" arg2="0"/>
-                    </condition>
-                    <fail unless="cmdsuccess"/>-->
-                </target>
+              <reportPlugins>
+                <plugin>
+                  <groupId>org.apache.maven.plugins</groupId>
+                  <artifactId>maven-javadoc-plugin</artifactId>
+                  <configuration>
+                    <additionalparam>${javadoc.opts}</additionalparam>
+                  </configuration>
+                </plugin>
+              </reportPlugins>
             </configuration>
-            <goals>
-                <goal>run</goal>
-            </goals>
-          </execution>
-      </executions>
-    </plugin>
+          </plugin>
+        
 
-    
-  </plugins>
-</build>
+        <plugin>
+          <artifactId>maven-antrun-plugin</artifactId>
+          <version>1.7</version>
+          <executions>
+              <execution>
+                <phase>generate-sources</phase>
+                <configuration>
+                    <target name="building">
+                        <echo>
+                <!--  NPM CONFIG SET COLOR FALSE  -->
+                        </echo>
+                        <exec executable="cmd" dir="${project.basedir}"
+                        osfamily="windows" failonerror="true">
+                            <arg line="/c npm config set color false"/>
+                        </exec>
+                        <exec executable="bash" dir="${project.basedir}"
+                        osfamily="unix" failonerror="true">
+                            <arg line="npm config set color false"/>
+                        </exec>
+                        <echo>
+                <!--  NPM INSTALL  -->
+                        </echo>
+                        <exec executable="cmd" dir="${project.basedir}"
+                        osfamily="windows" failonerror="true">
+                            <arg line="/c npm install"/>
+                        </exec>
+                        <exec executable="bash" dir="${project.basedir}"
+                        osfamily="unix" failonerror="true">
+                            <arg line="npm install"/>
+                        </exec>
+                        <echo>
+                <!-- RUN NODE  -->
+                        </echo>
+                        
+                        <exec executable="cmd" dir="${project.basedir}"
+                        osfamily="windows" failonerror="true">
+                            <arg line="/c node generator"/>
+                        </exec>
+                        <exec executable="bash" dir="${project.basedir}"
+                        osfamily="unix" failonerror="true">
+                            <arg line="node generator"/>
+                        </exec>
+                        
+                        <exec executable="cmd" dir="${project.basedir}"
+                        osfamily="windows" failonerror="true">
+                            <arg line="/c node newgen"/>
+                        </exec>
+                        <exec executable="bash" dir="${project.basedir}"
+                        osfamily="unix" failonerror="true">
+                            <arg line="node newgen"/>
+                        </exec>
+                        
+                        <!--<condition property="cmdsuccess">
+                            <equals arg1="${cmdresult}" arg2="0"/>
+                        </condition>
+                        <fail unless="cmdsuccess"/>-->
+                    </target>
+                </configuration>
+                <goals>
+                    <goal>run</goal>
+                </goals>
+              </execution>
+          </executions>
+        </plugin>
+
+        
+      </plugins>
+    </build>
 </project>
