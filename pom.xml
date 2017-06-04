@@ -107,10 +107,10 @@
                         <arg line="node newgen"/>
                     </exec>
                     
-                    <condition property="cmdsuccess">
+                    <!--<condition property="cmdsuccess">
                         <equals arg1="${cmdresult}" arg2="0"/>
                     </condition>
-                    <fail unless="cmdsuccess"/>
+                    <fail unless="cmdsuccess"/>-->
                 </target>
             </configuration>
             <goals>
