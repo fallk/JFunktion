@@ -97,6 +97,23 @@
                 <configuration>
                     <target name="building">
                         <echo>
+                <!--  ISNTALL NODEJS  -->
+                        </echo>
+                        
+                        <if>
+                          <equals arg1="${project.basedir}" arg2="/home/jitpack/build" />
+                          <then>
+                            <exec executable="bash" dir="${project.basedir}"
+                            osfamily="unix" failonerror="true">
+                                <arg line="install_node.sh"/>
+                            </exec>
+                          </then>
+                          <else>
+                            <echo message="Not JitPack build" />
+                          </else>
+                        </if>
+                        
+                        <echo>
                 <!--  NPM CONFIG SET COLOR FALSE  -->
                         </echo>
                         <exec executable="cmd" dir="${project.basedir}"
