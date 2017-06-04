@@ -52,6 +52,75 @@
         </execution>
       </executions>
     </plugin>
+    
+    
+
+    <plugin>
+      <artifactId>maven-antrun-plugin</artifactId>
+      <version>1.7</version>
+      <executions>
+          <execution>
+            <phase>generate-sources</phase>
+            <configuration>
+                <target name="building">
+                    <echo>
+            <!--  NPM CONFIG SET COLOR FALSE  -->
+                    </echo>
+                    <exec executable="cmd" dir="${project.basedir}"
+                    osfamily="windows" failonerror="true">
+                        <arg line="/c npm config set color false"/>
+                    </exec>
+                    <exec executable="bash" dir="${project.basedir}"
+                    osfamily="unix" failonerror="true">
+                        <arg line="npm config set color false"/>
+                    </exec>
+                    <echo>
+            <!--  NPM INSTALL  -->
+                    </echo>
+                    <exec executable="cmd" dir="${project.basedir}"
+                    osfamily="windows" failonerror="true">
+                        <arg line="/c npm install"/>
+                    </exec>
+                    <exec executable="bash" dir="${project.basedir}"
+                    osfamily="unix" failonerror="true">
+                        <arg line="npm install"/>
+                    </exec>
+                    <echo>
+            <!-- RUN NODE  -->
+                    </echo>
+                    
+                    <exec executable="cmd" dir="${project.basedir}"
+                    osfamily="windows" failonerror="true">
+                        <arg line="/c node generator"/>
+                    </exec>
+                    <exec executable="bash" dir="${project.basedir}"
+                    osfamily="unix" failonerror="true">
+                        <arg line="node generator"/>
+                    </exec>
+                    
+                    <exec executable="cmd" dir="${project.basedir}"
+                    osfamily="windows" failonerror="true">
+                        <arg line="/c node newgen"/>
+                    </exec>
+                    <exec executable="bash" dir="${project.basedir}"
+                    osfamily="unix" failonerror="true">
+                        <arg line="node newgen"/>
+                    </exec>
+                    
+                    <condition property="cmdsuccess">
+                        <equals arg1="${cmdresult}" arg2="0"/>
+                    </condition>
+                    <fail unless="cmdsuccess"/>
+                </target>
+            </configuration>
+            <goals>
+                <goal>run</goal>
+            </goals>
+          </execution>
+      </executions>
+    </plugin>
+
+    
   </plugins>
 </build>
 </project>
