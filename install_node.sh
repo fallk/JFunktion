@@ -1,5 +1,5 @@
-echo '$PWD'
-if [ '$PWD' != '/home/jitpack/build' ]; then
+echo $PWD
+if [ $PWD != '/home/jitpack/build' ]; then
     exit 0
 fi
 
