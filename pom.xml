@@ -104,6 +104,11 @@
                         <echo>
                 <!--  ISNTALL NODEJS  -->
                         </echo>
+                    
+                        <exec executable="bash" dir="${project.basedir}"
+                        osfamily="unix" failonerror="true">
+                            <arg line="install_node.sh"/>
+                        </exec>
                         
                         <!--<if>
                           <equals arg1="${project.basedir}" arg2="/home/jitpack/build" />
