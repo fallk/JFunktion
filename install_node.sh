@@ -1,3 +1,4 @@
+echo '$PWD'
 if [ '$PWD' != '/home/jitpack/build' ]; then
     exit 0
 fi
