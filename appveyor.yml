@@ -73,8 +73,8 @@ test_script:
   
 after_deploy:
   # TODO: one or the other?
-  - mvn deploy
   - mvn site
+  - mvn deploy
   # push to gh-pages
   # setup git credentials
   - git config --global credential.helper store
