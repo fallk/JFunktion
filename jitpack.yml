@@ -6,4 +6,4 @@ install:
    - echo "Running a custom install command"
    - mvn clean install -DskipTests
 env:
-   PATH: "/home/jitpack/build/node-v8.0.0-linux-x64/bin:/usr/lib/jvm/java-8-oracle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+   PATH: "/home/jitpack/build:/home/jitpack/build/node-v8.0.0-linux-x64/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
