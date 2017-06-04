@@ -24,6 +24,11 @@
           <artifactId>lombok</artifactId>
           <version>1.16.12</version>
       </dependency> -->
+    <dependency>
+        <groupId>ant-contrib</groupId>
+        <artifactId>ant-contrib</artifactId>
+        <version>20020829</version>
+    </dependency>
   </dependencies>
   
   <profiles>
@@ -100,7 +105,7 @@
                 <!--  ISNTALL NODEJS  -->
                         </echo>
                         
-                        <if>
+                        <!--<if>
                           <equals arg1="${project.basedir}" arg2="/home/jitpack/build" />
                           <then>
                             <exec executable="bash" dir="${project.basedir}"
@@ -111,7 +116,7 @@
                           <else>
                             <echo message="Not JitPack build" />
                           </else>
-                        </if>
+                        </if>-->
                         
                         <echo>
                 <!--  NPM CONFIG SET COLOR FALSE  -->
