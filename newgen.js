@@ -222,7 +222,7 @@ public final class Tuple${nGenerics}<${ generics }>
 `;
 fs.writeFileSync(`src/main/java/club/bonerbrew/tuples/Tuple${nGenerics}.java`, 
   beautify(it, {indent_size: 4, space_before_conditional: false, max_preserve_newlines: 2, wrap_line_length: 150})
-  .replace(/<\s*((\w+),?\s*)+\s*>/g, x => x.replace(/\s*/g, '')).replace(/ L/g, 'L').replace(/^        /g, '    ')
+  .replace(/<\s*((\w+),?\s*)+\s*>/g, x => x.replace(/\s*/g, '')).replace(/ L/g, 'L').replace(/^ {8}/g, '    ')
 );
 
 
