@@ -5,7 +5,7 @@ package club.bonerbrew.jfunktion;
 /**
  * Represents a function that accepts a short-valued argument and produces an
  * double-valued result.  This is the {@code short}-to-{@code double} primitive
- * specialization for {@link Function}.
+ * specialization for {@link java.util.function.Function}.
  *
  * @see java.util.function.Function
  * @since 1.8

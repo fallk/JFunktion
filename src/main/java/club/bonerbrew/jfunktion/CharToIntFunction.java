@@ -5,7 +5,7 @@ package club.bonerbrew.jfunktion;
 /**
  * Represents a function that accepts a char-valued argument and produces an
  * int-valued result.  This is the {@code char}-to-{@code int} primitive
- * specialization for {@link Function}.
+ * specialization for {@link java.util.function.Function}.
  *
  * @see java.util.function.Function
  * @since 1.8
