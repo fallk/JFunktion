@@ -115,8 +115,8 @@ for (const file of files) {
       f = f.replace(re3, jrePrimitiveNames[id]);
       f = f.replace(re4, zero[id]);
     }
-    try { fs.mkdirSync('./src/main/java/club/bonerbrew/' + _package); } catch (e) {}
-    fs.writeFileSync('./src/main/java/club/bonerbrew/' + _package + '/' + f, s);
+    try { fs.mkdirSync('./src/main/java/fallk/' + _package); } catch (e) {}
+    fs.writeFileSync('./src/main/java/fallk/' + _package + '/' + f, s);
   });
 
 }

@@ -2,7 +2,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>club.bonerbrew</groupId>
+    <groupId>fallk</groupId>
     <artifactId>jfunktion</artifactId>
     <!-- Maven 3.x and above should treat revXX properly -->
     <version>rev-SNAPSHOT</version> <!-- Automatically changed during appveyor build -->
