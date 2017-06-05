@@ -3,12 +3,13 @@
   <groupId>club.bonerbrew</groupId>
   <artifactId>jfunktion</artifactId>
   <versioning>
-    <release>rev42</release>
+    <release>rev43</release>
     <versions>
+      <version>rev43</version>
       <version>rev42</version>
       <version>rev41</version>
     </versions>
-    <lastUpdated>20170605062358</lastUpdated>
-    <latest>rev42</latest>
+    <lastUpdated>20170605064446</lastUpdated>
+    <latest>rev43</latest>
   </versioning>
 </metadata>
