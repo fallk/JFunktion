@@ -72,7 +72,8 @@ test_script:
   - node --version
   - npm --version
   # Maven test
-  - mvn clean install --batch-mode -Pqulice
+  - mvn test
+  #- mvn clean install --batch-mode -Pqulice
   
 after_deploy:
   # push to gh-pages
