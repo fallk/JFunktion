@@ -85,7 +85,7 @@ after_deploy:
   - cmd: mkdir %USERPROFILE%\gh-pages
   - git clone --quiet --branch=gh-pages https://github.com/fallk/JFunktion %USERPROFILE%\gh-pages
   - cmd: dir
-  - cmd: copyfiles
+  - cmd: cmd /c copyfiles
   - cmd: cd %USERPROFILE%\gh-pages
   - cmd: dir
   - git add -f .
