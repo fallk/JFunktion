@@ -1,7 +1,9 @@
 @echo off
-robocopy target\site %USERPROFILE%\gh-pages /CREATE /E
-robocopy target\mvn-repo %USERPROFILE%\gh-pages /CREATE /E
+rem robocopy target\site %USERPROFILE%\gh-pages /IS /IT /W:1 /NP /CREATE /E
+rem robocopy target\mvn-repo %USERPROFILE%\gh-pages /IS /IT /W:1 /NP /CREATE /E
 
+xcopy target\site %USERPROFILE%\gh-pages /R /S /E /Y 
+xcopy target\mvn-repo %USERPROFILE%\gh-pages /R /S /E /Y 
 
 
 if %ERRORLEVEL% EQU 16 echo ***FATAL ERROR*** & goto fail
