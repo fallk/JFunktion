@@ -5,6 +5,7 @@ const crypto = require('crypto');
 const util = require('util');
 const xml2js = promisify(require('xml2js'));
 const vkbeautify = require('vkbeautify');
+const fs = require('mz/fs');
 
 function buildXml(rootObj, rootName) {
   var name = '<?xml version="1.0" encoding="UTF-8"?>\n';
@@ -66,8 +67,7 @@ function checksum(str, algorithm, encoding) {
 }
 
 (async() => {
-  const fs = require('mz/fs');
-
+  /*
   const data = await fs.readFile('maven-metadata.xml');
   console.log(Object.prototype.toString.call(data), data);
   const md5 = checksum(data, 'md5');
@@ -81,7 +81,7 @@ function checksum(str, algorithm, encoding) {
   const metadata3 = metadata1;
   console.log(metadata3);
   metadata3.metadata.versioning = metadata1.metadata.versioning.concat(metadata2.metadata.versioning);
-
+  */
   //console.log(JSON.stringify(metadata3, null, 2));
   //console.log(JSON.stringify(assign(metadata1, metadata2), null, 2));
 
@@ -106,4 +106,6 @@ function checksum(str, algorithm, encoding) {
   console.log(output);
 
   await fs.writeFile(process.env.USERDIR == './' ? './maven-metadata.xml' : './target/mvn-repo/club/bonerbrew/jfunktion/maven-metadata.xml', output);
+  await fs.writeFile(process.env.USERDIR == './' ? './maven-metadata.xml.md5' : './target/mvn-repo/club/bonerbrew/jfunktion/maven-metadata.xml.md5', checksum(output));
+  await fs.writeFile(process.env.USERDIR == './' ? './maven-metadata.xml.sha1' : './target/mvn-repo/club/bonerbrew/jfunktion/maven-metadata.xml.sha1', checksum(output, 'sha1'));
 })();
