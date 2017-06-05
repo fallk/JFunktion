@@ -89,12 +89,13 @@ function checksum(str, algorithm, encoding) {
   //
   //
 
+  const mavenPackage = (process.env.MAVEN_PROJECT_PACKAGE_NAME || 'club.bonerbrew.jfunktion').replace(/\./g, '/');
   process.env.USERDIR = process.env.USERDIR || './';
 
   // the build dir (the current cd dir)
-  const m1 = await xml2js.parseString(await fs.readFile('./target/mvn-repo/club/bonerbrew/jfunktion/maven-metadata.xml', 'utf8'));
+  const m1 = await xml2js.parseString(await fs.readFile('./target/mvn-repo/' + mavenPackage + '/maven-metadata.xml', 'utf8'));
   // the gh-pages dir (in the userdir variable)
-  const m2 = await xml2js.parseString(await fs.readFile(process.env.USERDIR + '/club/bonerbrew/jfunktion/maven-metadata.xml', 'utf8'));
+  const m2 = await xml2js.parseString(await fs.readFile(process.env.USERDIR + '/' + mavenPackage + '/maven-metadata.xml', 'utf8'));
 
   const m3 = m1;
   m3.metadata.versioning[0].latest = m3.metadata.versioning[0].release; //not sure
@@ -105,7 +106,7 @@ function checksum(str, algorithm, encoding) {
   const output = vkbeautify.xml(buildXml(m3), 2);
   console.log(output);
 
-  await fs.writeFile(process.env.USERDIR == './' ? './maven-metadata.xml' : './target/mvn-repo/club/bonerbrew/jfunktion/maven-metadata.xml', output);
-  await fs.writeFile(process.env.USERDIR == './' ? './maven-metadata.xml.md5' : './target/mvn-repo/club/bonerbrew/jfunktion/maven-metadata.xml.md5', checksum(output));
-  await fs.writeFile(process.env.USERDIR == './' ? './maven-metadata.xml.sha1' : './target/mvn-repo/club/bonerbrew/jfunktion/maven-metadata.xml.sha1', checksum(output, 'sha1'));
+  await fs.writeFile(process.env.USERDIR == './' ? './maven-metadata.xml' : './target/mvn-repo/' + mavenPackage + '/maven-metadata.xml', output);
+  await fs.writeFile(process.env.USERDIR == './' ? './maven-metadata.xml.md5' : './target/mvn-repo/' + mavenPackage + '/maven-metadata.xml.md5', checksum(output));
+  await fs.writeFile(process.env.USERDIR == './' ? './maven-metadata.xml.sha1' : './target/mvn-repo/' + mavenPackage + '/maven-metadata.xml.sha1', checksum(output, 'sha1'));
 })();
