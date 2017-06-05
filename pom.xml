@@ -4,7 +4,8 @@
 
     <groupId>club.bonerbrew</groupId>
     <artifactId>jfunktion</artifactId>
-    <version>revSNAPSHOT</version> <!-- Automatically changed during appveyor build -->
+    <!-- Maven 3.x and above should treat revXX properly -->
+    <version>rev-SNAPSHOT</version> <!-- Automatically changed during appveyor build -->
     <packaging>jar</packaging>
 
     <name>jfunktion</name>
@@ -110,6 +111,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
+                <version>3.0.1</version>
                 <executions>
                     <execution>
                         <id>attach-sources</id>
