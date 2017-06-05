@@ -86,10 +86,12 @@ after_deploy:
   - git clone --quiet --branch=gh-pages https://github.com/fallk/JFunktion %USERPROFILE%\gh-pages
   - cmd: dir
   - cmd: cmd /c copyfiles
+#C:\projects\jfunktion-p0doj\  
+  - cmd: set LASTDIR=%CD%
   - cmd: cd %USERPROFILE%\gh-pages
   - cmd: dir
   - git add -f .
-  - cmd: cmd /c trycommit
+  - cmd: cmd /c %LASTDIR%\trycommit.bat
   - git push origin gh-pages
 
 cache:
