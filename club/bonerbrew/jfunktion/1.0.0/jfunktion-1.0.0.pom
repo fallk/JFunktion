@@ -50,6 +50,39 @@
         </profile>
     </profiles>
 
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.10.4</version>
+                <reportSets>
+                    <reportSet><!-- by default, id = "default" -->
+                        <reports><!-- select non-aggregate reports -->
+                            <report>javadoc-no-fork</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+                <configuration>
+                    <additionalparam>${javadoc.opts}</additionalparam>
+                    <quiet>true</quiet>
+                </configuration>
+                <!--<executions>-->
+                    <!--<execution>-->
+                        <!--<id>attach-javadocs</id>-->
+                        <!--<goals>-->
+                            <!--<goal>jar</goal>-->
+                        <!--</goals>-->
+                        <!--<configuration>-->
+                            <!--<additionalparam>${javadoc.opts}</additionalparam>-->
+                            <!--<quiet>true</quiet>-->
+                        <!--</configuration>-->
+                    <!--</execution>-->
+                <!--</executions>-->
+            </plugin>
+        </plugins>
+    </reporting>
+
     <build>
         <plugins>
             <plugin>
@@ -59,7 +92,7 @@
                     <execution>
                         <id>attach-sources</id>
                         <goals>
-                            <goal>jar</goal>
+                            <goal>jar-no-fork</goal>
                         </goals>
                     </execution>
                 </executions>
@@ -84,6 +117,7 @@
                         </goals>
                         <configuration>
                             <additionalparam>${javadoc.opts}</additionalparam>
+                            <quiet>true</quiet>
                         </configuration>
                     </execution>
                 </executions>
@@ -93,36 +127,38 @@
                 <artifactId>maven-site-plugin</artifactId>
                 <version>3.6</version>
                 <configuration>
-                    <reportPlugins>
-                        <plugin>
-                            <groupId>org.apache.maven.plugins</groupId>
-                            <artifactId>maven-javadoc-plugin</artifactId>
-                            <configuration>
-                                <additionalparam>${javadoc.opts}</additionalparam>
-                            </configuration>
-                        </plugin>
+                    <!--<reportPlugins>-->
+                        <!--<plugin>-->
+                            <!--<groupId>org.apache.maven.plugins</groupId>-->
+                            <!--<artifactId>maven-javadoc-plugin</artifactId>-->
+                            <!--<version>2.9</version>-->
+                            <!--<configuration>-->
+                                <!--<additionalparam>${javadoc.opts}</additionalparam>-->
+                                <!--<quiet>true</quiet>-->
+                            <!--</configuration>-->
+                        <!--</plugin>-->
 
 
-                        <plugin>
-                            <groupId>org.apache.maven.plugins</groupId>
-                            <artifactId>maven-project-info-reports-plugin</artifactId>
-                            <version>2.2</version>
-                            <configuration>
-                                <dependencyDetailsEnabled>true</dependencyDetailsEnabled>
-                                <dependencyLocationsEnabled>true</dependencyLocationsEnabled>
-                            </configuration>
-                        </plugin>
-                        <plugin>
-                            <groupId>org.apache.maven.plugins</groupId>
-                            <artifactId>maven-surefire-report-plugin</artifactId>
-                            <version>2.6</version>
-                        </plugin>
-                        <plugin>
-                            <groupId>org.apache.maven.plugins</groupId>
-                            <artifactId>maven-checkstyle-plugin</artifactId>
-                            <version>2.6</version>
-                        </plugin>
-                    </reportPlugins>
+                        <!--<plugin>-->
+                            <!--<groupId>org.apache.maven.plugins</groupId>-->
+                            <!--<artifactId>maven-project-info-reports-plugin</artifactId>-->
+                            <!--<version>2.2</version>-->
+                            <!--<configuration>-->
+                                <!--<dependencyDetailsEnabled>true</dependencyDetailsEnabled>-->
+                                <!--<dependencyLocationsEnabled>true</dependencyLocationsEnabled>-->
+                            <!--</configuration>-->
+                        <!--</plugin>-->
+                        <!--<plugin>-->
+                            <!--<groupId>org.apache.maven.plugins</groupId>-->
+                            <!--<artifactId>maven-surefire-report-plugin</artifactId>-->
+                            <!--<version>2.6</version>-->
+                        <!--</plugin>-->
+                        <!--<plugin>-->
+                            <!--<groupId>org.apache.maven.plugins</groupId>-->
+                            <!--<artifactId>maven-checkstyle-plugin</artifactId>-->
+                            <!--<version>2.6</version>-->
+                        <!--</plugin>-->
+                    <!--</reportPlugins>-->
                 </configuration>
             </plugin>
 
