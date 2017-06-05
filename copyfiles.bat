@@ -1,3 +1,4 @@
+@echo off
 robocopy target\site %USERPROFILE%\gh-pages /CREATE /E
 robocopy target\mvn-repo %USERPROFILE%\gh-pages /CREATE /E
 
