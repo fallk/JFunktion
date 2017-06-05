@@ -11,7 +11,7 @@ for (let i = 1; i <= 64; i++) {
 
 for (let i = 0; i < 64; i++) {
   const it2 = `
-package club.bonerbrew.tuples.values;
+package fallk.tuples.values;
 
 /**
  * A ${i}-nth value.
@@ -30,7 +30,7 @@ public interface IValue${i}<V> {
     public V get${i}();
 }
   `;
-  fs.writeFileSync(`src/main/java/club/bonerbrew/tuples/values/IValue${i}.java`, it2);
+  fs.writeFileSync(`src/main/java/fallk/tuples/values/IValue${i}.java`, it2);
 }
 
 function process(nGenerics) {
@@ -68,13 +68,13 @@ function containsAnyValue() {
 String.prototype.trimLastComma = function() { return this.replace(/,\s*?$/, ''); };
 
 const it = `
-package club.bonerbrew.tuples;
+package fallk.tuples;
 
 import java.util.Iterator;
 import java.util.Arrays;
 import java.util.stream.Stream;
 
-${pair(0, nGenerics, i => 'import club.bonerbrew.tuples.values.IValue' + i + ';')}
+${pair(0, nGenerics, i => 'import fallk.tuples.values.IValue' + i + ';')}
 
 /**
  * A tuple of ${nGenerics} elements.
@@ -220,7 +220,7 @@ public final class Tuple${nGenerics}<${ generics }>
 }
 
 `;
-fs.writeFileSync(`src/main/java/club/bonerbrew/tuples/Tuple${nGenerics}.java`, 
+fs.writeFileSync(`src/main/java/fallk/tuples/Tuple${nGenerics}.java`, 
   beautify(it, {indent_size: 4, space_before_conditional: false, max_preserve_newlines: 2, wrap_line_length: 150})
   .replace(/<\s*((\w+),?\s*)+\s*>/g, x => x.replace(/\s*/g, '')).replace(/ L/g, 'L').replace(/^ {8}/g, '    ')
 );
@@ -292,7 +292,7 @@ fs.writeFileSync(`src/main/java/club/bonerbrew/tuples/Tuple${nGenerics}.java`,
 
 
 let it2 = `
-package club.bonerbrew.genfuncs;
+package fallk.genfuncs;
 
 /**
  * A function that accepts ${nGenerics} arguments and produces a result.
@@ -309,7 +309,7 @@ public interface Function${nGenerics}<${ generics }, R> {
 }
 
 `;
-fs.writeFileSync(`src/main/java/club/bonerbrew/genfuncs/Function${nGenerics}.java`, 
+fs.writeFileSync(`src/main/java/fallk/genfuncs/Function${nGenerics}.java`, 
   beautify(it2, {indent_size: 4, space_before_conditional: false, max_preserve_newlines: 2, wrap_line_length: 150})
   .replace(/<\s*((\w+),?\s*)+\s*>/g, x => x.replace(/\s*/g, '')).replace(/ L/g, 'L')
 );
@@ -317,7 +317,7 @@ fs.writeFileSync(`src/main/java/club/bonerbrew/genfuncs/Function${nGenerics}.jav
 
 
 it2 = `
-package club.bonerbrew.genconsumers;
+package fallk.genconsumers;
 
 /**
  * A consumer that accepts ${nGenerics} arguments.
@@ -332,14 +332,14 @@ public interface Consumer${nGenerics}<${ generics }> {
 }
 
 `;
-fs.writeFileSync(`src/main/java/club/bonerbrew/genconsumers/Consumer${nGenerics}.java`, 
+fs.writeFileSync(`src/main/java/fallk/genconsumers/Consumer${nGenerics}.java`, 
   beautify(it2, {indent_size: 4, space_before_conditional: false, max_preserve_newlines: 2, wrap_line_length: 150})
   .replace(/<\s*((\w+),?\s*)+\s*>/g, x => x.replace(/\s*/g, '')).replace(/ L/g, 'L')
 );
 
 
 it2 = `
-package club.bonerbrew.genpredicates;
+package fallk.genpredicates;
 
 /**
  * A predicate that accepts ${nGenerics} arguments and produces a boolean result.
@@ -356,7 +356,7 @@ public interface Predicate${nGenerics}<${ generics }> {
 }
 
 `;
-fs.writeFileSync(`src/main/java/club/bonerbrew/genpredicates/Predicate${nGenerics}.java`, 
+fs.writeFileSync(`src/main/java/fallk/genpredicates/Predicate${nGenerics}.java`, 
   beautify(it2, {indent_size: 4, space_before_conditional: false, max_preserve_newlines: 2, wrap_line_length: 150})
   .replace(/<\s*((\w+),?\s*)+\s*>/g, x => x.replace(/\s*/g, '')).replace(/ L/g, 'L')
 );

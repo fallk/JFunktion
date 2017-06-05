@@ -1,16 +1,16 @@
 //$package:stream$
-package club.bonerbrew.stream;
+package fallk.stream;
 
-import club.bonerbrew.jfunktion.$primitiveFmt$BinaryOperator;
-import club.bonerbrew.jfunktion.$primitiveFmt$Consumer;
-import club.bonerbrew.jfunktion.$primitiveFmt$Function;
-import club.bonerbrew.jfunktion.$primitiveFmt$ObjectConsumer;
-import club.bonerbrew.jfunktion.$primitiveFmt$Predicate;
-import club.bonerbrew.jfunktion.$primitiveFmt$ToBooleanFunction;
-import club.bonerbrew.jfunktion.$primitiveFmt$To$primitiveFmt$Function;
-import club.bonerbrew.jfunktion.$primitiveFmt$ToDoubleFunction;
-import club.bonerbrew.jfunktion.$primitiveFmt$ToLongFunction;
-import club.bonerbrew.jfunktion.Optional$primitiveFmt$;
+import fallk.jfunktion.$primitiveFmt$BinaryOperator;
+import fallk.jfunktion.$primitiveFmt$Consumer;
+import fallk.jfunktion.$primitiveFmt$Function;
+import fallk.jfunktion.$primitiveFmt$ObjectConsumer;
+import fallk.jfunktion.$primitiveFmt$Predicate;
+import fallk.jfunktion.$primitiveFmt$ToBooleanFunction;
+import fallk.jfunktion.$primitiveFmt$To$primitiveFmt$Function;
+import fallk.jfunktion.$primitiveFmt$ToDoubleFunction;
+import fallk.jfunktion.$primitiveFmt$ToLongFunction;
+import fallk.jfunktion.Optional$primitiveFmt$;
 
 import java.beans.ConstructorProperties;
 import java.util.Arrays;

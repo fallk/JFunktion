@@ -89,7 +89,7 @@ function checksum(str, algorithm, encoding) {
   //
   //
 
-  const mavenPackage = (process.env.MAVEN_PROJECT_PACKAGE_NAME || 'club.bonerbrew.jfunktion').replace(/\./g, '/');
+  const mavenPackage = (process.env.MAVEN_PROJECT_PACKAGE_NAME || 'fallk.jfunktion').replace(/\./g, '/');
   process.env.USERDIR = process.env.USERDIR || './';
 
   // the build dir (the current cd dir)

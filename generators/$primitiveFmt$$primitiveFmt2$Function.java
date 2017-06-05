@@ -1,6 +1,6 @@
 // THIS CODE IS MACHINE-GENERATED, DO NOT EDIT!
 
-package club.bonerbrew.jfunktion;
+package fallk.jfunktion;
 
 /**
  * Represents a function that accepts two arguments, a $primitive$ and a $primitive2$, and produces a

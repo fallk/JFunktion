@@ -23,7 +23,7 @@ for (let i = 3; i < 5; i++) {
   let s = `
 // THIS CODE IS MACHINE-GENERATED, DO NOT EDIT!
 
-package club.bonerbrew.jfunktion;
+package fallk.jfunktion;
 
 /**
  * Represents a predicate (boolean-valued function) of a {@code $primitive$}-valued and a {@code $primitive2$}-valued argument.
@@ -53,7 +53,7 @@ public interface ${repeat('$primitiveFmt', i, '$')}Predicate {
   s = `
 // THIS CODE IS MACHINE-GENERATED, DO NOT EDIT!
 
-package club.bonerbrew.jfunktion;
+package fallk.jfunktion;
 
 /**
  * Represents a consumer of a {@code $primitive$}-valued and a {@code $primitive2$}-valued argument.

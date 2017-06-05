@@ -1,6 +1,6 @@
 // THIS CODE IS MACHINE-GENERATED, DO NOT EDIT!
 
-package club.bonerbrew.jfunktion;
+package fallk.jfunktion;
 
 /**
  * Represents a function that accepts a $primitive$-valued argument and produces an

@@ -1,6 +1,6 @@
 // THIS CODE IS MACHINE-GENERATED, DO NOT EDIT!
 
-package club.bonerbrew.jfunktion;
+package fallk.jfunktion;
 
 /**
  * Represents an operation upon two {@code $primitive$}-valued operands and producing an

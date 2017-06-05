@@ -33,7 +33,7 @@ version: '{build}'
 skip_tags: true
 clone_depth: 10
 environment:
-  MAVEN_PROJECT_PACKAGE_NAME: club.bonerbrew.jfunktion
+  MAVEN_PROJECT_PACKAGE_NAME: fallk.jfunktion
   nodejs_version: "8"
   matrix:
     #- JAVA_HOME: C:\Program Files\Java\jdk1.7.0
