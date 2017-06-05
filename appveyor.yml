@@ -62,6 +62,8 @@ install:
   - cmd: SET JAVA_OPTS=-Xmx4g
   - cmd: mvn --version
   - cmd: java -version
+before_build:
+  - cmd: mvn versions:set -DnewVersion=rev%APPVEYOR_BUILD_NUMBER% -DgenerateBackupPoms=false
 build_script:
   # clean wipes stuff, site generates the site, deploy generates the repo
   # i think i can merge deploy into site so it doesn't have to run things twice?
