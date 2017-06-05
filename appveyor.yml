@@ -64,7 +64,7 @@ install:
   - cmd: java -version
 build_script:
   # clean wipes stuff, site generates the site, deploy generates the repo
-  # i think i can merge deploy into site so it's not all run twice
+  # i think i can merge deploy into site so it doesn't have to run things twice?
   - mvn clean deploy site -B -Dmaven.test.skip=true
   #- mvn clean package -B -Dmaven.test.skip=true
 test_script:
