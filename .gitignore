@@ -1,2 +1,5 @@
 /target/
 node_modules
+club
+maven-metadata.xml
+maven-metadata_2.xml

@@ -87,6 +87,10 @@ after_deploy:
   # clone gh-pages branch to separate folder
   - cmd: mkdir %USERPROFILE%\gh-pages
   - git clone --quiet --branch=gh-pages https://github.com/fallk/JFunktion %USERPROFILE%\gh-pages
+  # update the xml
+  - cmd: set USERDIR=%USERPROFILE%\gh-pages
+  - node _testhash
+  #
   - cmd: dir
   - cmd: cmd /c copyfiles
 #C:\projects\jfunktion-p0doj\  
