@@ -4,7 +4,7 @@
 
     <groupId>club.bonerbrew</groupId>
     <artifactId>jfunktion</artifactId>
-    <version>1.0.0</version>
+    <version>revSNAPSHOT</version> <!-- Automatically changed during appveyor build -->
     <packaging>jar</packaging>
 
     <name>jfunktion</name>
