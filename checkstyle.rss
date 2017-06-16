@@ -25,8 +25,8 @@ under the License.
     <language>en-us</language>
     <copyright>&#169;2017</copyright>
     <item>
-      <title>File: 653,
-             Errors: 69005,
+      <title>File: 661,
+             Errors: 69021,
              Warnings: 0,
              Infos: 0
       </title>
@@ -896,6 +896,20 @@ under the License.
                 </td>
                 <td>
                   146
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/rafa1231518/JFunktion/checkstyle.html#fallk.jfunktion.ObjectToIntFunction.java">fallk/jfunktion/ObjectToIntFunction.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  2
                 </td>
               </tr>
                           <tr>
@@ -2818,6 +2832,20 @@ under the License.
               </tr>
                           <tr>
                 <td>
+                  <a href="https://github.com/rafa1231518/JFunktion/checkstyle.html#fallk.jfunktion.ObjectToDoubleFunction.java">fallk/jfunktion/ObjectToDoubleFunction.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  2
+                </td>
+              </tr>
+                          <tr>
+                <td>
                   <a href="https://github.com/rafa1231518/JFunktion/checkstyle.html#fallk.genfuncs.Function6.java">fallk/genfuncs/Function6.java</a>
                 </td>
                 <td>
@@ -3280,6 +3308,20 @@ under the License.
               </tr>
                           <tr>
                 <td>
+                  <a href="https://github.com/rafa1231518/JFunktion/checkstyle.html#fallk.jfunktion.ObjectToByteFunction.java">fallk/jfunktion/ObjectToByteFunction.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  2
+                </td>
+              </tr>
+                          <tr>
+                <td>
                   <a href="https://github.com/rafa1231518/JFunktion/checkstyle.html#fallk.genpredicates.Predicate63.java">fallk/genpredicates/Predicate63.java</a>
                 </td>
                 <td>
@@ -3668,6 +3710,20 @@ under the License.
                 </td>
                 <td>
                   114
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/rafa1231518/JFunktion/checkstyle.html#fallk.jfunktion.ObjectToBooleanFunction.java">fallk/jfunktion/ObjectToBooleanFunction.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  2
                 </td>
               </tr>
                           <tr>
@@ -4191,6 +4247,20 @@ under the License.
                           <tr>
                 <td>
                   <a href="https://github.com/rafa1231518/JFunktion/checkstyle.html#fallk.jfunktion.LongPredicate.java">fallk/jfunktion/LongPredicate.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  2
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/rafa1231518/JFunktion/checkstyle.html#fallk.jfunktion.ObjectToFloatFunction.java">fallk/jfunktion/ObjectToFloatFunction.java</a>
                 </td>
                 <td>
                   0
@@ -6934,6 +7004,20 @@ under the License.
               </tr>
                           <tr>
                 <td>
+                  <a href="https://github.com/rafa1231518/JFunktion/checkstyle.html#fallk.jfunktion.ObjectToCharFunction.java">fallk/jfunktion/ObjectToCharFunction.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  2
+                </td>
+              </tr>
+                          <tr>
+                <td>
                   <a href="https://github.com/rafa1231518/JFunktion/checkstyle.html#fallk.genpredicates.Predicate42.java">fallk/genpredicates/Predicate42.java</a>
                 </td>
                 <td>
@@ -8572,6 +8656,20 @@ under the License.
               </tr>
                           <tr>
                 <td>
+                  <a href="https://github.com/rafa1231518/JFunktion/checkstyle.html#fallk.jfunktion.ObjectToShortFunction.java">fallk/jfunktion/ObjectToShortFunction.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  2
+                </td>
+              </tr>
+                          <tr>
+                <td>
                   <a href="https://github.com/rafa1231518/JFunktion/checkstyle.html#fallk.genconsumers.Consumer7.java">fallk/genconsumers/Consumer7.java</a>
                 </td>
                 <td>
@@ -9128,6 +9226,20 @@ under the License.
                 </td>
                 <td>
                   826
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/rafa1231518/JFunktion/checkstyle.html#fallk.jfunktion.ObjectToLongFunction.java">fallk/jfunktion/ObjectToLongFunction.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  2
                 </td>
               </tr>
                           <tr>

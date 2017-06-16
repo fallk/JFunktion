@@ -3,10 +3,12 @@
   <groupId>fallk</groupId>
   <artifactId>jfunktion</artifactId>
   <versioning>
-    <release>rev46</release>
+    <release>rev47</release>
     <versions>
+      <version>rev47</version>
       <version>rev46</version>
     </versions>
-    <lastUpdated>20170605165405</lastUpdated>
+    <lastUpdated>20170616022523</lastUpdated>
+    <latest>rev47</latest>
   </versioning>
 </metadata>
